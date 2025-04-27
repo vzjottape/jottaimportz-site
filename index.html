@@ -147,12 +147,6 @@
       width: 28px;
       cursor: pointer;
     }
-
-    /* Adicionado para mudar o carrinho para branco */
-    #cart-icon {
-      filter: brightness(0) invert(1);
-    }
-
     .instagram {
       text-align: center;
       margin: 50px 0;
@@ -172,3 +166,119 @@
     }
   </style>
 </head>
+<body>
+
+<header>
+  <h1>JOTTA IMPORTZ</h1>
+  <nav>
+    <a href="#produtos">Coleção</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search">
+    <div style="position: relative;">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Carrinho" id="cart-icon">
+      <span id="cart-count" style="position: absolute; top: -8px; right: -8px; background: red; color: white; font-size: 12px; width: 18px; height: 18px; text-align: center; border-radius: 50%;">0</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h2>STREET É NOSSA IDENTIDADE</h2>
+  <a href="#produtos">VER COLEÇÃO</a>
+</section>
+
+<main id="produtos">
+  <h2 style="text-align: center;">Produtos em Destaque</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1628185140868-2e31fdf6c39a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jordan 4">
+      <h3>Jordan 4 White Oreo</h3>
+      <p>R$999</p>
+      <button onclick="addToCart('Jordan 4 White Oreo', 999)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1628443692456-fbef291a0066?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nike TN">
+      <h3>Nike TN Plus Triple Black</h3>
+      <p>R$899</p>
+      <button onclick="addToCart('Nike TN Plus Triple Black', 899)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1614105470916-7c2b5d54d9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trapstar">
+      <h3>Trapstar T-shirt London</h3>
+      <p>R$349</p>
+      <button onclick="addToCart('Trapstar T-shirt London', 349)">Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1614266682678-428b827a5b3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Palm Angels">
+      <h3>Palm Angels Track Pants</h3>
+      <p>R$799</p>
+      <button onclick="addToCart('Palm Angels Track Pants', 799)">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+
+  <div class="instagram">
+    <a href="https://www.instagram.com/jottaimportz" target="_blank">Nosso Instagram</a>
+  </div>
+</main>
+
+<section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
+  <h3>SOBRE NÓS</h3>
+  <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
+</section>
+
+<section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
+  <h3>CONTATO</h3>
+  <p>Cola com a gente no Instagram!</p>
+  <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
+</section>
+
+<footer>
+  © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
+</footer>
+
+<div class="cart" id="cart">
+  <h3>Carrinho</h3>
+  <div id="cart-items"></div>
+</div>
+
+<script>
+  let cart = [];
+  const cartCount = document.getElementById('cart-count');
+  const cartContainer = document.getElementById('cart');
+  const cartItemsContainer = document.getElementById('cart-items');
+
+  function addToCart(product, price) {
+    cart.push({ product, price });
+    updateCart();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+  }
+
+  function updateCart() {
+    cartCount.textContent = cart.length;
+    cartItemsContainer.innerHTML = "";
+    cart.forEach((item, index) => {
+      cartItemsContainer.innerHTML += `
+        <div class="cart-item">
+          <span>${item.product} - R$${item.price}</span>
+          <button onclick="removeItem(${index})">&times;</button>
+        </div>
+      `;
+    });
+  }
+
+  document.getElementById('cart-icon').addEventListener('click', () => {
+    cartContainer.style.display = cartContainer.style.display === 'flex' ? 'none' : 'flex';
+  });
+</script>
+
+</body>
+</html>
