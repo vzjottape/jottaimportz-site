@@ -7,38 +7,59 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
       background-color: #f2f2f2;
+      color: #000;
+      font-family: 'Arial', sans-serif;
     }
     header {
-      background-color: #000;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #000;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    .logo {
-      height: 40px;
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 2px;
+      color: white;
     }
-    .icons {
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .hero {
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1615566635411-80e3b209d292?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080') center/cover no-repeat;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 20px;
+      text-align: center;
+      padding: 0 20px;
     }
-    .icons img {
-      width: 28px;
-      cursor: pointer;
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px #000;
+      color: white;
     }
-    .banner {
-      width: 100%;
-      height: 300px;
-      background: url('https://images.unsplash.com/photo-1606813904038-16c96b2b53fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center center/cover no-repeat;
+    .hero a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #8B0000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
     }
     main {
-      padding: 20px;
+      padding: 40px 20px;
     }
     .products {
       display: grid;
@@ -83,7 +104,7 @@
     .cart {
       position: fixed;
       right: 20px;
-      top: 70px;
+      top: 80px;
       background: #fff;
       border: 1px solid #ccc;
       width: 300px;
@@ -110,6 +131,22 @@
       border-radius: 50%;
       cursor: pointer;
     }
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .icons img {
+      width: 28px;
+      cursor: pointer;
+    }
     .instagram {
       text-align: center;
       margin: 50px 0;
@@ -132,7 +169,12 @@
 <body>
 
 <header>
-  <img src="logo.png" alt="Logo" class="logo">
+  <h1>JOTTA IMPORTZ</h1>
+  <nav>
+    <a href="#produtos">Coleção</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
   <div class="icons">
     <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search">
     <div style="position: relative;">
@@ -142,10 +184,13 @@
   </div>
 </header>
 
-<div class="banner"></div>
+<section class="hero">
+  <h2>STREET É NOSSA IDENTIDADE</h2>
+  <a href="#produtos">VER COLEÇÃO</a>
+</section>
 
-<main>
-  <h2>Produtos em Destaque</h2>
+<main id="produtos">
+  <h2 style="text-align: center;">Produtos em Destaque</h2>
   <div class="products">
     <div class="product">
       <img src="https://images.unsplash.com/photo-1628185140868-2e31fdf6c39a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jordan 4">
@@ -180,6 +225,21 @@
     <a href="https://www.instagram.com/jottaimportz" target="_blank">Nosso Instagram</a>
   </div>
 </main>
+
+<section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
+  <h3>SOBRE NÓS</h3>
+  <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
+</section>
+
+<section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
+  <h3>CONTATO</h3>
+  <p>Cola com a gente no Instagram!</p>
+  <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
+</section>
+
+<footer>
+  © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
+</footer>
 
 <div class="cart" id="cart">
   <h3>Carrinho</h3>
