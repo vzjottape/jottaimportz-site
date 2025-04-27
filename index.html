@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,3 +57,56 @@
     .collection, .about, .contact {
       padding: 60px 20px;
       text-align: center;
+    }
+    .collection h3, .about h3, .contact h3 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body><header>
+  <h1>JOTTA IMPORTZ</h1>
+  <nav>
+    <a href="#colecao">Coleção</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header><section class="hero">
+  <h2>STREET É NOSSA IDENTIDADE</h2>
+  <a href="#colecao">VER COLEÇÃO</a>
+</section><section class="collection" id="colecao">
+  <h3>COLEÇÃO</h3>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1618326292052-0c87c3cfd005?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Roupa 1">
+    <img src="https://images.unsplash.com/photo-1600180758890-7c49dc92b472?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Roupa 2">
+    <img src="https://images.unsplash.com/photo-1616469829581-73964ef8f289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Roupa 3">
+    <img src="https://images.unsplash.com/photo-1600181950848-74a14786425a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Roupa 4">
+  </div>
+</section><section class="about" id="sobre">
+  <h3>SOBRE NÓS</h3>
+  <p>JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
+</section><section class="contact" id="contato">
+  <h3>CONTATO</h3>
+  <p>Cola com a gente no Instagram!</p>
+  <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
+</section><footer>
+  © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
+</footer></body>
+</html>
