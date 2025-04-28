@@ -61,9 +61,11 @@
     }
     .product img {
       width: 100%;
-      height: 150px;
-      object-fit: cover;
+      height: 250px; /* altura aumentada para dar espaço para tênis e camisetas */
+      object-fit: contain; /* para não cortar as imagens */
+      background-color: #fff; /* fundo branco */
       border-radius: 8px;
+      padding: 10px; /* espaço interno para a imagem respirar */
     }
     .product h3 {
       font-size: 18px;
