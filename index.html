@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jotta Importz</title>
   <style>
-    /* Estilos básicos */
     body {
       margin: 0;
       background-color: #f2f2f2;
@@ -17,27 +16,25 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
-      background-color: #fff;
+      background-color: #fff; /* Header agora branco */
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 0 0 transparent; /* Removido a sombra */
-      border-bottom: 0; /* Removido a borda */
     }
     header h1 {
       font-size: 32px;
       letter-spacing: 2px;
-      color: black;
+      color: black; /* Texto preto */
     }
     nav a {
       margin: 0 15px;
-      color: black;
+      color: black; /* Links pretos */
       text-decoration: none;
       font-size: 18px;
     }
     .announcement-bar {
-      background-color: #000;
-      color: #fff;
+      background-color: #000; /* Barra preta */
+      color: #fff; /* Texto branco */
       text-align: center;
       padding: 10px;
       font-size: 14px;
@@ -87,7 +84,6 @@
     .product button:hover {
       background-color: #333;
     }
-    /* Estilo do Carrinho */
     .cart {
       position: fixed;
       right: 20px;
@@ -95,20 +91,14 @@
       background: #fff;
       border: 1px solid #ccc;
       width: 300px;
-      max-height: 0;
-      overflow: hidden;
+      max-height: 400px;
+      overflow-y: auto;
+      display: none;
       flex-direction: column;
-      padding: 0 15px;
+      padding: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       border-radius: 10px;
       z-index: 2000;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      display: flex;
-    }
-    .cart.open {
-      max-height: 400px;
-      padding: 15px;
-      overflow-y: auto;
     }
     .cart-item {
       display: flex;
@@ -131,102 +121,114 @@
       padding: 20px;
       margin-top: 40px;
     }
-    /* Ícone do Carrinho */
-    .icons {
-      position: relative;
-      display: inline-block;
-    }
-    #cart-count {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      background: red;
-      color: white;
-      font-size: 12px;
-      width: 18px;
-      height: 18px;
-      text-align: center;
-      border-radius: 50%;
-      line-height: 18px;
-      transition: transform 0.2s ease;
-      display: none;
-      justify-content: center;
-      align-items: center;
-    }
-    /* Overlay de fundo escuro */
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 1500;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      opacity: 0;
-      visibility: hidden;
-    }
-    #overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
   </style>
 </head>
 <body>
-  <!-- Barra de frete grátis -->
-  <div class="announcement-bar">
-    MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!
-  </div>
-  
-  <header>
-    <h1>JOTTA IMPORTZ</h1>
-    <nav>
-      <a href="#produtos">Coleção</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <div class="icons">
-      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Carrinho" id="cart-icon" style="width: 28px; cursor: pointer;">
-      <span id="cart-count">0</span>
-    </div>
-  </header>
-  
-  <main id="produtos">
-    <h2 style="text-align: center;">Produtos em Destaque</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1628185140868-2e31fdf6c39a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jordan 4">
-        <h3>Jordan 4 White Oreo</h3>
-        <p>R$999</p>
-        <button onclick="addToCart('Jordan 4 White Oreo', 999)">Adicionar ao Carrinho</button>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1628443692456-fbef291a0066?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nike TN">
-        <h3>Nike TN Plus Triple Black</h3>
-        <p>R$899</p>
-        <button onclick="addToCart('Nike TN Plus Triple Black', 899)">Adicionar ao Carrinho</button>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1614105470916-7c2b5d54d9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trapstar">
-        <h3>Trapstar T-shirt London</h3>
-        <p>R$349</p>
-        <button onclick="addToCart('Trapstar T-shirt London', 349)">Adicionar ao Carrinho</button>
-      </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1614266682678-428b827a5b3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Palm Angels">
-        <h3>Palm Angels Track Pants</h3>
-        <p>R$799</p>
-        <button onclick="addToCart('Palm Angels Track Pants', 799)">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-  </main>
 
-  <section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
-    <h3>CONTATO</h3>
-    <p>Cole com a gente no Instagram!</p>
-    <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
-  </section>
-  
-  <section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
-    <h3>SOBRE NÓS</h3>
-    <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa,
+<!-- Barra de frete grátis -->
+<div class="announcement-bar">
+  FRETE GRÁTIS EM COMPRAS ACIMA DE R$400
+</div>
+
+<header>
+  <h1>JOTTA IMPORTZ</h1>
+  <nav>
+    <a href="#produtos">Coleção</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search" style="width: 28px; cursor: pointer;">
+    <div style="position: relative;">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Carrinho" id="cart-icon" style="width: 28px; cursor: pointer;">
+      <span id="cart-count" style="position: absolute; top: -8px; right: -8px; background: red; color: white; font-size: 12px; width: 18px; height: 18px; text-align: center; border-radius: 50%;">0</span>
+    </div>
+  </div>
+</header>
+
+<main id="produtos">
+  <h2 style="text-align: center;">Produtos em Destaque</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1628185140868-2e31fdf6c39a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jordan 4">
+      <h3>Jordan 4 White Oreo</h3>
+      <p>R$999</p>
+      <button onclick="addToCart('Jordan 4 White Oreo', 999)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1628443692456-fbef291a0066?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nike TN">
+      <h3>Nike TN Plus Triple Black</h3>
+      <p>R$899</p>
+      <button onclick="addToCart('Nike TN Plus Triple Black', 899)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1614105470916-7c2b5d54d9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trapstar">
+      <h3>Trapstar T-shirt London</h3>
+      <p>R$349</p>
+      <button onclick="addToCart('Trapstar T-shirt London', 349)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1614266682678-428b827a5b3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Palm Angels">
+      <h3>Palm Angels Track Pants</h3>
+      <p>R$799</p>
+      <button onclick="addToCart('Palm Angels Track Pants', 799)">Adicionar ao Carrinho</button>
+    </div>
+  </div>
+</main>
+
+<section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
+  <h3>SOBRE NÓS</h3>
+  <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
+</section>
+
+<section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
+  <h3>CONTATO</h3>
+  <p>Cole com a gente no Instagram!</p>
+  <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
+</section>
+
+<footer>
+  © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
+</footer>
+
+<div class="cart" id="cart">
+  <h3>Carrinho</h3>
+  <div id="cart-items"></div>
+</div>
+
+<script>
+  let cart = [];
+  const cartCount = document.getElementById('cart-count');
+  const cartContainer = document.getElementById('cart');
+  const cartItemsContainer = document.getElementById('cart-items');
+
+  function addToCart(product, price) {
+    cart.push({ product, price });
+    updateCart();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+  }
+
+  function updateCart() {
+    cartCount.textContent = cart.length;
+    cartItemsContainer.innerHTML = "";
+    cart.forEach((item, index) => {
+      cartItemsContainer.innerHTML += `
+        <div class="cart-item">
+          <span>${item.product} - R$${item.price}</span>
+          <button onclick="removeItem(${index})">&times;</button>
+        </div>
+      `;
+    });
+  }
+
+  document.getElementById('cart-icon').addEventListener('click', () => {
+    cartContainer.style.display = cartContainer.style.display === 'flex' ? 'none' : 'flex';
+  });
+</script>
+
+</body>
+</html>
