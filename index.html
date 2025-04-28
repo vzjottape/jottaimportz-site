@@ -12,6 +12,17 @@
       color: #000;
       font-family: 'Arial', sans-serif;
     }
+    .announcement-bar {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 0;          /* Novo: remove espaçamento */
+      border: none;       /* Novo: remove qualquer borda */
+    }
     header {
       display: flex;
       justify-content: space-between;
@@ -21,8 +32,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: none !important; /* Correção adicionada */
-      box-shadow: none !important;     /* Correção adicionada */
+      border-top: none !important;    /* Novo */
+      border-bottom: none !important; /* Corrigido */
+      box-shadow: none !important;    /* Corrigido */
+      margin: 0;                      /* Novo: remove espaçamento */
     }
     header h1 {
       font-size: 32px;
@@ -34,15 +47,6 @@
       color: black;
       text-decoration: none;
       font-size: 18px;
-    }
-    .announcement-bar {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 1px;
     }
     main {
       padding: 40px 20px;
@@ -221,14 +225,14 @@
   </div>
 </main>
 
-<!-- Primeiro vem o CONTATO -->
+<!-- Contato -->
 <section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
   <h3>CONTATO</h3>
   <p>Cole com a gente no Instagram!</p>
   <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
 </section>
 
-<!-- Depois vem o SOBRE NÓS -->
+<!-- Sobre -->
 <section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
   <h3>SOBRE NÓS</h3>
   <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
@@ -244,10 +248,10 @@
   <div id="cart-items"></div>
 </div>
 
-<!-- Overlay de fundo escuro -->
+<!-- Overlay -->
 <div id="overlay"></div>
 
-<!-- Script Completo -->
+<!-- Script Carrinho -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     let cart = [];
@@ -269,11 +273,7 @@
 
     function updateCart() {
       cartCount.textContent = cart.length;
-      if (cart.length === 0) {
-        cartCount.style.display = 'none';
-      } else {
-        cartCount.style.display = 'flex';
-      }
+      cartCount.style.display = cart.length > 0 ? 'flex' : 'none';
       cartCount.style.transform = 'scale(1.3)';
       setTimeout(() => {
         cartCount.style.transform = 'scale(1)';
