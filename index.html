@@ -46,9 +46,9 @@
     main {
       padding: 40px 20px;
     }
-    .products {
+    .products-camisas, .products-tenis {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       margin-top: 20px;
     }
@@ -59,13 +59,19 @@
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .product img {
+    .products-camisas .product img {
       width: 100%;
-      height: 250px; /* altura aumentada para dar espaço para tênis e camisetas */
-      object-fit: contain; /* para não cortar as imagens */
-      background-color: #fff; /* fundo branco */
+      height: 250px;
+      object-fit: contain;
+      background-color: #fff;
       border-radius: 8px;
-      padding: 10px; /* espaço interno para a imagem respirar */
+      padding: 10px;
+    }
+    .products-tenis .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
     }
     .product h3 {
       font-size: 18px;
@@ -86,6 +92,7 @@
       cursor: pointer;
       font-size: 16px;
       margin-top: 10px;
+      transition: background 0.3s;
     }
     .product a button:hover {
       background-color: #333;
@@ -96,6 +103,13 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+    }
+
+    /* RESPONSIVO PARA CELULAR */
+    @media (max-width: 768px) {
+      .products-camisas, .products-tenis {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -115,19 +129,9 @@
 
 <main>
   <h2 style="text-align: center;">Promoções Quentes</h2>
-  <div class="products">
-    <div class="product">
-      <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Jordan 4 White Oreo">
-      <h3>Jordan 4 White Oreo</h3>
-      <p>R$899</p>
-      <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-    </div>
-    <div class="product">
-      <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike TN Plus Triple Black">
-      <h3>Nike TN Plus Triple Black</h3>
-      <p>R$799</p>
-      <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-    </div>
+
+  <!-- CAMISETAS -->
+  <div class="products-camisas">
     <div class="product">
       <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Trapstar T-shirt London">
       <h3>Trapstar T-shirt London</h3>
@@ -141,6 +145,24 @@
       <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
     </div>
   </div>
+
+  <!-- TÊNIS -->
+  <h2 style="text-align: center; margin-top: 50px;">Tênis em Promoção</h2>
+  <div class="products-tenis">
+    <div class="product">
+      <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Jordan 4 White Oreo">
+      <h3>Jordan 4 White Oreo</h3>
+      <p>R$899</p>
+      <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
+    </div>
+    <div class="product">
+      <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike TN Plus Triple Black">
+      <h3>Nike TN Plus Triple Black</h3>
+      <p>R$799</p>
+      <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
+    </div>
+  </div>
+
 </main>
 
 <section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
