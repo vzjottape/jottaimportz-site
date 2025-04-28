@@ -21,8 +21,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 0 0 transparent; /* Remove sombra */
-      border-bottom: 0; /* Remove borda */
+      box-shadow: 0 0 0 transparent;
+      border-bottom: 0;
     }
     header h1 {
       font-size: 32px;
@@ -87,7 +87,7 @@
     .product button:hover {
       background-color: #333;
     }
-    /* Estilo do Carrinho */
+    /* Carrinho */
     .cart {
       position: fixed;
       right: 20px;
@@ -131,7 +131,6 @@
       padding: 20px;
       margin-top: 40px;
     }
-    /* Ícone do Carrinho */
     .icons {
       position: relative;
       display: inline-block;
@@ -153,7 +152,6 @@
       justify-content: center;
       align-items: center;
     }
-    /* Overlay de fundo escuro */
     #overlay {
       position: fixed;
       top: 0;
@@ -194,7 +192,7 @@
 </header>
 
 <main id="produtos">
-  <h2 style="text-align: center;">Produtos em Destaque</h2>
+  <h2 style="text-align: center;">Promoções Quentes</h2>
   <div class="products">
     <div class="product">
       <img src="https://images.unsplash.com/photo-1628185140868-2e31fdf6c39a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jordan 4">
@@ -223,15 +221,17 @@
   </div>
 </main>
 
-<section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
-  <h3>SOBRE NÓS</h3>
-  <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
-</section>
-
+<!-- Primeiro vem o CONTATO -->
 <section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
   <h3>CONTATO</h3>
   <p>Cole com a gente no Instagram!</p>
   <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
+</section>
+
+<!-- Depois vem o SOBRE NÓS -->
+<section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
+  <h3>SOBRE NÓS</h3>
+  <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
 </section>
 
 <footer>
@@ -274,7 +274,6 @@
       } else {
         cartCount.style.display = 'flex';
       }
-      // Animação do contador
       cartCount.style.transform = 'scale(1.3)';
       setTimeout(() => {
         cartCount.style.transform = 'scale(1)';
@@ -290,3 +289,33 @@
         `;
       });
     }
+
+    function toggleCart() {
+      cartContainer.classList.toggle('open');
+      overlay.classList.toggle('active');
+      document.body.style.overflow = cartContainer.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeCart() {
+      cartContainer.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    cartIcon.addEventListener('click', toggleCart);
+    overlay.addEventListener('click', closeCart);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCart();
+      }
+    });
+
+    window.addToCart = addToCart;
+    window.removeItem = removeItem;
+
+    updateCart(); // Inicializa
+  });
+</script>
+
+</body>
+</html>
