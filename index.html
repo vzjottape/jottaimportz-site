@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,8 +19,8 @@
       font-size: 14px;
       font-weight: bold;
       letter-spacing: 1px;
-      margin: 0;          /* Novo: remove espaçamento */
-      border: none;       /* Novo: remove qualquer borda */
+      margin: 0;
+      border: none;
     }
     header {
       display: flex;
@@ -32,10 +31,6 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-top: none !important;    /* Novo */
-      border-bottom: none !important; /* Corrigido */
-      box-shadow: none !important;    /* Corrigido */
-      margin: 0;                      /* Novo: remove espaçamento */
     }
     header h1 {
       font-size: 32px;
@@ -91,43 +86,6 @@
     .product button:hover {
       background-color: #333;
     }
-    /* Carrinho */
-    .cart {
-      position: fixed;
-      right: 20px;
-      top: 80px;
-      background: #fff;
-      border: 1px solid #ccc;
-      width: 300px;
-      max-height: 0;
-      overflow: hidden;
-      flex-direction: column;
-      padding: 0 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      border-radius: 10px;
-      z-index: 2000;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-      display: flex;
-    }
-    .cart.open {
-      max-height: 400px;
-      padding: 15px;
-      overflow-y: auto;
-    }
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .cart-item button {
-      background: red;
-      border: none;
-      color: white;
-      padding: 2px 6px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
     footer {
       background-color: #000;
       color: white;
@@ -173,16 +131,10 @@
       visibility: visible;
     }
   </style>
-</head>
-
-<body>
-
-<!-- Barra de frete grátis -->
+</head><body>
 <div class="announcement-bar">
   MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!
-</div>
-
-<header>
+</div><header>
   <h1>JOTTA IMPORTZ</h1>
   <nav>
     <a href="#produtos">Coleção</a>
@@ -193,66 +145,47 @@
     <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Carrinho" id="cart-icon" style="width: 28px; cursor: pointer;">
     <span id="cart-count">0</span>
   </div>
-</header>
-
-<main id="produtos">
+</header><main id="produtos">
   <h2 style="text-align: center;">Promoções Quentes</h2>
   <div class="products">
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1628185140868-2e31fdf6c39a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jordan 4">
+      <img src="images/jordan4whiteoreo.jpg" alt="Jordan 4 White Oreo">
       <h3>Jordan 4 White Oreo</h3>
       <p>R$999</p>
       <button onclick="addToCart('Jordan 4 White Oreo', 999)">Adicionar ao Carrinho</button>
     </div>
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1628443692456-fbef291a0066?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nike TN">
+      <img src="images/niketntripleblack.jpg" alt="Nike TN Plus Triple Black">
       <h3>Nike TN Plus Triple Black</h3>
       <p>R$899</p>
       <button onclick="addToCart('Nike TN Plus Triple Black', 899)">Adicionar ao Carrinho</button>
     </div>
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1614105470916-7c2b5d54d9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Trapstar">
+      <img src="images/trapstartshirtlondon.jpg" alt="Trapstar T-shirt London">
       <h3>Trapstar T-shirt London</h3>
       <p>R$349</p>
       <button onclick="addToCart('Trapstar T-shirt London', 349)">Adicionar ao Carrinho</button>
     </div>
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1614266682678-428b827a5b3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Palm Angels">
+      <img src="images/palmangelstrackpants.jpg" alt="Palm Angels Track Pants">
       <h3>Palm Angels Track Pants</h3>
       <p>R$799</p>
       <button onclick="addToCart('Palm Angels Track Pants', 799)">Adicionar ao Carrinho</button>
     </div>
   </div>
-</main>
-
-<!-- Contato -->
-<section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
+</main><section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
   <h3>CONTATO</h3>
   <p>Cole com a gente no Instagram!</p>
   <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
-</section>
-
-<!-- Sobre -->
-<section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
+</section><section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
   <h3>SOBRE NÓS</h3>
   <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
-</section>
-
-<footer>
+</section><footer>
   © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
-</footer>
-
-<!-- Carrinho -->
-<div class="cart" id="cart">
+</footer><div class="cart" id="cart">
   <h3>Carrinho</h3>
   <div id="cart-items"></div>
-</div>
-
-<!-- Overlay -->
-<div id="overlay"></div>
-
-<!-- Script Carrinho -->
-<script>
+</div><div id="overlay"></div><script>
   document.addEventListener('DOMContentLoaded', () => {
     let cart = [];
     const cartCount = document.getElementById('cart-count');
@@ -313,9 +246,7 @@
     window.addToCart = addToCart;
     window.removeItem = removeItem;
 
-    updateCart(); // Inicializa
+    updateCart();
   });
-</script>
-
-</body>
+</script></body>
 </html>
