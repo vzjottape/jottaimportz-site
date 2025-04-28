@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,8 +33,9 @@
       font-size: 18px;
     }
     .hero {
-      height: 50vh;
-      background: url('https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/file_000000000b6061f683d2728c55ffd8d3.png') center/cover no-repeat;
+      height: 100vh;
+      background: url('https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/file_000000000b6061f683d2728c55ffd8d3.png') center/contain no-repeat;
+      background-color: #000;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -120,7 +122,9 @@
     }
   </style>
 </head>
-<body><header>
+<body>
+
+<header>
   <h1>JOTTA IMPORTZ</h1>
   <nav>
     <a href="#produtos">Coleção</a>
@@ -134,7 +138,11 @@
       <span id="cart-count" style="position: absolute; top: -8px; right: -8px; background: red; color: white; font-size: 12px; width: 18px; height: 18px; text-align: center; border-radius: 50%;">0</span>
     </div>
   </div>
-</header><section class="hero"></section><main id="produtos">
+</header>
+
+<section class="hero"></section>
+
+<main id="produtos">
   <h2 style="text-align: center;">Produtos em Destaque</h2>
   <div class="products">
     <div class="product">
@@ -162,19 +170,29 @@
       <button onclick="addToCart('Palm Angels Track Pants', 799)">Adicionar ao Carrinho</button>
     </div>
   </div>
-</main><section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
+</main>
+
+<section class="about" id="sobre" style="text-align: center; padding: 60px 20px;">
   <h3>SOBRE NÓS</h3>
   <p style="max-width: 600px; margin: auto;">JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
-</section><section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
+</section>
+
+<section class="contact" id="contato" style="text-align: center; padding: 60px 20px;">
   <h3>CONTATO</h3>
   <p>Cole com a gente no Instagram!</p>
   <a href="https://www.instagram.com/jottaimportz" target="_blank" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #8B0000; color: white; text-decoration: none; border-radius: 5px;">NOSSO INSTAGRAM</a>
-</section><footer>
+</section>
+
+<footer>
   © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
-</footer><div class="cart" id="cart">
+</footer>
+
+<div class="cart" id="cart">
   <h3>Carrinho</h3>
   <div id="cart-items"></div>
-</div><script>
+</div>
+
+<script>
   let cart = [];
   const cartCount = document.getElementById('cart-count');
   const cartContainer = document.getElementById('cart');
@@ -206,5 +224,7 @@
   document.getElementById('cart-icon').addEventListener('click', () => {
     cartContainer.style.display = cartContainer.style.display === 'flex' ? 'none' : 'flex';
   });
-</script></body>
+</script>
+
+</body>
 </html>
