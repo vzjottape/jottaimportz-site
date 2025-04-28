@@ -77,6 +77,8 @@
       font-weight: bold;
       margin-bottom: 10px;
     }
+
+    /* Botão COMPRAR com brilho preto e estrelinha */
     .product a button {
       background-color: #000;
       color: #fff;
@@ -90,55 +92,27 @@
       position: relative;
       overflow: hidden;
       transition: all 0.4s ease;
+      box-shadow: 0 0 0 transparent;
     }
-
     .product a button:hover {
       background-color: #111;
-      animation: pulseGlow 1.5s infinite;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
     }
-
-    @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-      }
-      50% {
-        box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7);
-      }
-      100% {
-        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-      }
-    }
-
-    .product a button::before {
+    .product a button::after {
       content: "";
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
-      transform: rotate(25deg);
+      top: 10px;
+      right: 10px;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
       opacity: 0;
-      transition: opacity 0.5s;
+      transform: scale(0);
+      transition: all 0.3s ease;
     }
-
-    .product a button:hover::before {
-      animation: shine 1.5s forwards;
-    }
-
-    @keyframes shine {
-      0% {
-        transform: translateX(-100%) rotate(25deg);
-        opacity: 0;
-      }
-      50% {
-        transform: translateX(0%) rotate(25deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(100%) rotate(25deg);
-        opacity: 0;
-      }
+    .product a button:hover::after {
+      opacity: 1;
+      transform: scale(1.5);
     }
 
     section {
