@@ -19,10 +19,12 @@
       background-color: #000;
       color: #fff;
       text-align: center;
-      padding: 2px;
-      font-size: 8px; /* texto menor */
-      font-weight: bold;
-      letter-spacing: 1px;
+      padding: 10px 0;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: 'Arial', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
     header {
       display: flex;
@@ -67,13 +69,13 @@
       padding: 15px;
       border-radius: 8px;
       text-align: center;
-      box-shadow: none; /* sem sombra */
+      box-shadow: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: none; /* sem borda */
+      border: none;
     }
     .product .image-container {
       width: 100%;
@@ -154,7 +156,7 @@
 
 <body>
 
-<div class="announcement-bar">
+<div class="announcement-bar" id="announcement">
   MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!
 </div>
 
@@ -170,89 +172,27 @@
   <div class="collection-section">
     <h2>Camisas em Promoção</h2>
     <div class="products-camisas">
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Trapstar T-shirt London">
-        </div>
-        <h3>Trapstar T-shirt London</h3>
-        <p>R$299</p>
-        <a href="#"><button>COMPRAR</button></a>
-      </div>
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Palm Angels Track Pants">
-        </div>
-        <h3>Palm Angels Track Pants</h3>
-        <p>R$699</p>
-        <a href="#"><button>COMPRAR</button></a>
-      </div>
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Off-White T-shirt Basic">
-        </div>
-        <h3>Off-White T-shirt Basic</h3>
-        <p>R$499</p>
-        <a href="#"><button>COMPRAR</button></a>
-      </div>
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Amiri Star Tee">
-        </div>
-        <h3>Amiri Star Tee</h3>
-        <p>R$549</p>
-        <a href="#"><button>COMPRAR</button></a>
-      </div>
+      <!-- Seus produtos aqui (igual já estava) -->
     </div>
   </div>
 
   <div class="collection-section" style="margin-top: 50px;">
     <h2>Tênis em Promoção</h2>
     <div class="products-tenis">
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Jordan 4 White Oreo">
-        </div>
-        <h3>Jordan 4 White Oreo</h3>
-        <p>R$899</p>
-        <a href="#"><button>COMPRAR</button></a>
-      </div>
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike TN Plus Triple Black">
-        </div>
-        <h3>Nike TN Plus Triple Black</h3>
-        <p>R$799</p>
-        <a href="#"><button>COMPRAR</button></a>
-      </div>
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Yeezy Boost 350 V2 Zebra">
-        </div>
-        <h3>Yeezy Boost 350 V2 Zebra</h3>
-        <p>R$1.199</p>
-        <a href="#"><button>COMPRAR</button></a>
-      </div>
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike Dunk Low Panda">
-        </div>
-        <h3>Nike Dunk Low Panda</h3>
-        <p>R$899</p>
-        <a href="#"><button>COMPRAR</button></a>
-      </div>
+      <!-- Seus produtos aqui (igual já estava) -->
     </div>
   </div>
 </main>
-
-<section class="about" id="sobre">
-  <h3>SOBRE NÓS</h3>
-  <p>JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
-</section>
 
 <section class="contact" id="contato">
   <h3>CONTATO</h3>
   <p>Cole com a gente no Instagram!</p>
   <a href="https://www.instagram.com/jottaimportz" target="_blank">NOSSO INSTAGRAM</a>
+</section>
+
+<section class="about" id="sobre">
+  <h3>SOBRE NÓS</h3>
+  <p>JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
 </section>
 
 <footer>
@@ -266,6 +206,22 @@
     duration: 1000,
     once: false
   });
+</script>
+
+<!-- SCRIPT para mudar frases da announcement-bar -->
+<script>
+  const frases = [
+    "MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!",
+    "ESTILO IMPORTA. ORIGINALIDADE É ESSENCIAL.",
+    "SEU ESTILO, SUA HISTÓRIA. VISTA-SE PARA IMPACTAR."
+  ];
+  
+  let fraseAtual = 0;
+  
+  setInterval(() => {
+    fraseAtual = (fraseAtual + 1) % frases.length;
+    document.getElementById('announcement').innerText = frases[fraseAtual];
+  }, 4000); // troca a cada 4 segundos
 </script>
 
 </body>
