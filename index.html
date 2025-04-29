@@ -5,85 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jotta Importz</title>
 
-  <!-- AOS: Animação -->
+  <!-- AOS: Animação ao rolar -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+  
   <style>
     body {
       margin: 0;
       background-color: #fff;
-      font-family: 'Arial', sans-serif;
       color: #000;
+      font-family: 'Arial', sans-serif;
     }
     .announcement-bar {
       background-color: #000;
       color: #fff;
       text-align: center;
-      padding: 4px 0;
-      font-size: 9px;
-      font-weight: 300;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      padding: 2px;
+      font-size: 8px; /* texto menor */
+      font-weight: bold;
+      letter-spacing: 1px;
     }
     header {
       display: flex;
-      justify-content: center;
-      padding: 30px 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
       background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header h1 {
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 32px;
       letter-spacing: 2px;
+      color: black;
+    }
+    nav a {
+      margin: 0 15px;
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
     }
     main {
-      padding: 40px 20px;
-      max-width: 1200px;
+      padding: 40px 0;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .collection-section {
+      padding: 0 20px;
+    }
+    .products-camisas, .products-tenis {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 30px;
+      max-width: 1000px;
       margin: 0 auto;
     }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 50px;
-    }
     .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: none; /* sem sombra */
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none; /* sem borda */
+    }
+    .product .image-container {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      display: flex;
       align-items: center;
-      text-align: center;
+      justify-content: center;
+      background-color: #fff;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
     .product img {
-      width: 100%;
-      height: auto;
-      border-radius: 0;
-      transition: transform 0.3s;
-    }
-    .product img:hover {
-      transform: scale(1.02);
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      object-fit: contain;
     }
     .product h3 {
+      font-size: 18px;
       margin: 10px 0 5px;
-      font-size: 14px;
-      font-weight: 400;
-      letter-spacing: 0.5px;
     }
     .product p {
-      margin: 0;
-      font-size: 13px;
-      font-weight: 500;
-      color: #555;
+      color: green;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .product a {
+      margin-top: auto;
+    }
+    .product a button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+    .product a button:hover {
+      background-color: #333;
+    }
+    section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .contact a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #8B0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .about p {
+      max-width: 600px;
+      margin: 20px auto 0;
     }
     footer {
       background-color: #000;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 60px;
-      font-size: 14px;
+      margin-top: 40px;
     }
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 24px;
+      .products-camisas, .products-tenis {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -92,57 +155,105 @@
 <body>
 
 <div class="announcement-bar">
-  <span id="announcement-text">MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!</span>
+  MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!
 </div>
 
 <header>
   <h1>JOTTA IMPORTZ</h1>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
 </header>
 
 <main>
-  <div class="products-grid">
-    <div class="product" data-aos="fade-up">
-      <img src="URL_DA_IMAGEM" alt="Trapstar T-shirt London">
-      <h3>Trapstar T-shirt London</h3>
-      <p>R$299</p>
+  <div class="collection-section">
+    <h2>Camisas em Promoção</h2>
+    <div class="products-camisas">
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="URL_DA_IMAGEM" alt="Trapstar T-shirt London">
+        </div>
+        <h3>Trapstar T-shirt London</h3>
+        <p>R$299</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="URL_DA_IMAGEM" alt="Palm Angels Track Pants">
+        </div>
+        <h3>Palm Angels Track Pants</h3>
+        <p>R$699</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="URL_DA_IMAGEM" alt="Off-White T-shirt Basic">
+        </div>
+        <h3>Off-White T-shirt Basic</h3>
+        <p>R$499</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="URL_DA_IMAGEM" alt="Amiri Star Tee">
+        </div>
+        <h3>Amiri Star Tee</h3>
+        <p>R$549</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
     </div>
-    <div class="product" data-aos="fade-up">
-      <img src="URL_DA_IMAGEM" alt="Palm Angels Track Pants">
-      <h3>Palm Angels Track Pants</h3>
-      <p>R$699</p>
-    </div>
-    <div class="product" data-aos="fade-up">
-      <img src="URL_DA_IMAGEM" alt="Off-White T-shirt Basic">
-      <h3>Off-White T-shirt Basic</h3>
-      <p>R$499</p>
-    </div>
-    <div class="product" data-aos="fade-up">
-      <img src="URL_DA_IMAGEM" alt="Amiri Star Tee">
-      <h3>Amiri Star Tee</h3>
-      <p>R$549</p>
-    </div>
-    <div class="product" data-aos="fade-up">
-      <img src="URL_DA_IMAGEM" alt="Jordan 4 White Oreo">
-      <h3>Jordan 4 White Oreo</h3>
-      <p>R$899</p>
-    </div>
-    <div class="product" data-aos="fade-up">
-      <img src="URL_DA_IMAGEM" alt="Nike TN Plus Triple Black">
-      <h3>Nike TN Plus Triple Black</h3>
-      <p>R$799</p>
-    </div>
-    <div class="product" data-aos="fade-up">
-      <img src="URL_DA_IMAGEM" alt="Yeezy Boost 350 V2 Zebra">
-      <h3>Yeezy Boost 350 V2 Zebra</h3>
-      <p>R$1.199</p>
-    </div>
-    <div class="product" data-aos="fade-up">
-      <img src="URL_DA_IMAGEM" alt="Nike Dunk Low Panda">
-      <h3>Nike Dunk Low Panda</h3>
-      <p>R$899</p>
+  </div>
+
+  <div class="collection-section" style="margin-top: 50px;">
+    <h2>Tênis em Promoção</h2>
+    <div class="products-tenis">
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="URL_DA_IMAGEM" alt="Jordan 4 White Oreo">
+        </div>
+        <h3>Jordan 4 White Oreo</h3>
+        <p>R$899</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="URL_DA_IMAGEM" alt="Nike TN Plus Triple Black">
+        </div>
+        <h3>Nike TN Plus Triple Black</h3>
+        <p>R$799</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="URL_DA_IMAGEM" alt="Yeezy Boost 350 V2 Zebra">
+        </div>
+        <h3>Yeezy Boost 350 V2 Zebra</h3>
+        <p>R$1.199</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="URL_DA_IMAGEM" alt="Nike Dunk Low Panda">
+        </div>
+        <h3>Nike Dunk Low Panda</h3>
+        <p>R$899</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
     </div>
   </div>
 </main>
+
+<section class="about" id="sobre">
+  <h3>SOBRE NÓS</h3>
+  <p>JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
+</section>
+
+<section class="contact" id="contato">
+  <h3>CONTATO</h3>
+  <p>Cole com a gente no Instagram!</p>
+  <a href="https://www.instagram.com/jottaimportz" target="_blank">NOSSO INSTAGRAM</a>
+</section>
 
 <footer>
   © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
@@ -155,20 +266,6 @@
     duration: 1000,
     once: false
   });
-
-  const phrases = [
-    "MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!",
-    "O ESTILO QUE FAZ PARTE DO SEU CORRE.",
-    "CONQUISTE SEU ESPAÇO COM ATITUDE."
-  ];
-  
-  let currentPhrase = 0;
-  const textElement = document.getElementById('announcement-text');
-  
-  setInterval(() => {
-    currentPhrase = (currentPhrase + 1) % phrases.length;
-    textElement.textContent = phrases[currentPhrase];
-  }, 3000); // troca a cada 3 segundos
 </script>
 
 </body>
