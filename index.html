@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jotta Importz</title>
 
-  <!-- AOS: Animação ao rolar -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  
+
   <style>
     body {
       margin: 0;
@@ -15,17 +14,18 @@
       color: #000;
       font-family: 'Arial', sans-serif;
     }
+
     .announcement-bar {
       background-color: #000;
       color: #fff;
       text-align: center;
       padding: 5px 0;
-      font-size: 7px; /* texto menor */
+      font-size: 7px;
       font-weight: 400;
-      font-family: 'Arial', sans-serif;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -36,48 +36,53 @@
       top: 0;
       z-index: 1000;
     }
+
     header h1 {
       font-size: 32px;
       letter-spacing: 2px;
       color: black;
     }
+
     nav a {
       margin: 0 15px;
       color: black;
       text-decoration: none;
       font-size: 18px;
     }
+
     main {
       padding: 40px 20px;
       max-width: 1200px;
       margin: 0 auto;
     }
+
     h2 {
       text-align: left;
       margin-bottom: 30px;
       font-size: 24px;
     }
+
     .collection-section {
       margin-bottom: 60px;
     }
+
     .products-camisas, .products-tenis {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
+
     .product {
       background: #fff;
       padding: 15px;
       border-radius: 8px;
       text-align: center;
-      box-shadow: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: none;
     }
+
     .product .image-container {
       width: 100%;
       height: 250px;
@@ -89,24 +94,29 @@
       border-radius: 8px;
       margin-bottom: 10px;
     }
+
     .product img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
+
     .product h3 {
       font-size: 16px;
       margin: 10px 0 5px;
     }
+
     .product p {
       color: green;
       font-weight: bold;
       margin-bottom: 10px;
       font-size: 14px;
     }
+
     .product a {
       margin-top: auto;
     }
+
     .product a button {
       background-color: #000;
       color: #fff;
@@ -119,13 +129,16 @@
       margin-top: 10px;
       transition: background 0.3s ease;
     }
+
     .product a button:hover {
       background-color: #333;
     }
+
     section {
       text-align: center;
       padding: 60px 20px;
     }
+
     .contact a {
       display: inline-block;
       margin-top: 20px;
@@ -136,17 +149,21 @@
       border-radius: 5px;
       font-size: 16px;
     }
+
     .about p {
       max-width: 600px;
       margin: 20px auto 0;
     }
+
     footer {
       background-color: #000;
       color: white;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+      font-size: 10px;
     }
+
     @media (max-width: 768px) {
       .products-camisas, .products-tenis {
         grid-template-columns: 1fr;
@@ -176,7 +193,7 @@
   <div class="collection-section">
     <h2>Camisas em Promoção</h2>
     <div class="products-camisas">
-      <div class="product" data-aos="fade-up">
+      <div class="product">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Trapstar T-shirt London">
         </div>
@@ -184,7 +201,7 @@
         <p>R$299</p>
         <a href="#"><button>COMPRAR</button></a>
       </div>
-      <div class="product" data-aos="fade-up">
+      <div class="product">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Palm Angels Track Pants">
         </div>
@@ -192,7 +209,7 @@
         <p>R$699</p>
         <a href="#"><button>COMPRAR</button></a>
       </div>
-      <div class="product" data-aos="fade-up">
+      <div class="product">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Off-White T-shirt Basic">
         </div>
@@ -200,7 +217,7 @@
         <p>R$499</p>
         <a href="#"><button>COMPRAR</button></a>
       </div>
-      <div class="product" data-aos="fade-up">
+      <div class="product">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Amiri Star Tee">
         </div>
@@ -214,7 +231,7 @@
   <div class="collection-section">
     <h2>Tênis em Promoção</h2>
     <div class="products-tenis">
-      <div class="product" data-aos="fade-up">
+      <div class="product">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Jordan 4 White Oreo">
         </div>
@@ -222,7 +239,7 @@
         <p>R$899</p>
         <a href="#"><button>COMPRAR</button></a>
       </div>
-      <div class="product" data-aos="fade-up">
+      <div class="product">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike TN Plus Triple Black">
         </div>
@@ -230,7 +247,7 @@
         <p>R$799</p>
         <a href="#"><button>COMPRAR</button></a>
       </div>
-      <div class="product" data-aos="fade-up">
+      <div class="product">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Yeezy Boost 350 V2 Zebra">
         </div>
@@ -238,7 +255,7 @@
         <p>R$1.199</p>
         <a href="#"><button>COMPRAR</button></a>
       </div>
-      <div class="product" data-aos="fade-up">
+      <div class="product">
         <div class="image-container">
           <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike Dunk Low Panda">
         </div>
@@ -265,25 +282,21 @@
   © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
 </footer>
 
-<!-- SCRIPT do AOS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
     duration: 1000,
     once: false
   });
-</script>
 
-<!-- SCRIPT para mudar frases da announcement-bar -->
-<script>
   const frases = [
     "MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!",
     "ESTILO IMPORTA. ORIGINALIDADE É ESSENCIAL.",
     "SEU ESTILO, SUA HISTÓRIA. VISTA-SE PARA IMPACTAR."
   ];
-  
+
   let fraseAtual = 0;
-  
+
   setInterval(() => {
     fraseAtual = (fraseAtual + 1) % frases.length;
     document.getElementById('announcement').innerText = frases[fraseAtual];
