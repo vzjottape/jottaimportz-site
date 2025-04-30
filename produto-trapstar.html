@@ -50,12 +50,21 @@
       font-size: 16px;
     }
 
-    .sizes {
+    .sizes, .colors {
       margin: 20px 0;
     }
 
     .sizes label {
       margin-right: 15px;
+    }
+
+    .color-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #000;
+      margin-right: 10px;
+      cursor: pointer;
     }
 
     .buy-button {
@@ -83,7 +92,7 @@
 </header>
 
 <main>
-  <img class="product-img" src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Trapstar T-shirt London" />
+  <img id="productImage" class="product-img" src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Trapstar T-shirt London" />
 
   <h1>Trapstar T-shirt London</h1>
   <p class="price">R$299</p>
@@ -100,8 +109,25 @@
     <label><input type="radio" name="size" /> GG</label>
   </div>
 
+  <div class="colors">
+    <strong>Cor:</strong><br />
+    <button class="color-btn" style="background: white;" onclick="trocarImagem('branco')"></button>
+    <button class="color-btn" style="background: black;" onclick="trocarImagem('preto')"></button>
+  </div>
+
   <a href="https://www.instagram.com/jottaimportz" target="_blank" class="buy-button">COMPRAR NO INSTAGRAM</a>
 </main>
+
+<script>
+  function trocarImagem(cor) {
+    const imagem = document.getElementById("productImage");
+    if (cor === 'branco') {
+      imagem.src = "https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png";
+    } else if (cor === 'preto') {
+      imagem.src = "https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png";
+    }
+  }
+</script>
 
 </body>
 </html>
