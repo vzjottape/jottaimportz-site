@@ -50,7 +50,7 @@
       font-size: 16px;
     }
 
-    .sizes, .colors {
+    .colors, .sizes {
       margin: 20px 0;
     }
 
@@ -92,13 +92,19 @@
 </header>
 
 <main>
-  <img id="productImage" class="product-img" src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Trapstar T-shirt London" />
+  <img id="productImage" class="product-img" src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042715550902.png" alt="Trapstar T-shirt London" />
 
   <h1>Trapstar T-shirt London</h1>
   <p class="price">R$299</p>
 
   <div class="description">
     Camisa Trapstar original, direto de Londres, pra quem tem presença e estilo. Tecido confortável, caimento perfeito, ideal pra colar no rolê com identidade.
+  </div>
+
+  <div class="colors">
+    <strong>Cor:</strong><br />
+    <button class="color-btn" style="background: white;" onclick="trocarImagem('branco')"></button>
+    <button class="color-btn" style="background: black;" onclick="trocarImagem('preto')"></button>
   </div>
 
   <div class="sizes">
@@ -109,12 +115,6 @@
     <label><input type="radio" name="size" /> GG</label>
   </div>
 
-  <div class="colors">
-    <strong>Cor:</strong><br />
-    <button class="color-btn" style="background: white;" onclick="trocarImagem('branco')"></button>
-    <button class="color-btn" style="background: black;" onclick="trocarImagem('preto')"></button>
-  </div>
-
   <a href="https://www.instagram.com/jottaimportz" target="_blank" class="buy-button">COMPRAR NO INSTAGRAM</a>
 </main>
 
@@ -122,9 +122,9 @@
   function trocarImagem(cor) {
     const imagem = document.getElementById("productImage");
     if (cor === 'branco') {
-      imagem.src = "https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png";
+      imagem.src = "https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042715550902.png";
     } else if (cor === 'preto') {
-      imagem.src = "https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png";
+      imagem.src = "https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042715350100.png";
     }
   }
 </script>
