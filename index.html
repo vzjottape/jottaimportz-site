@@ -33,6 +33,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
     .logo-img {
@@ -40,36 +41,45 @@
       object-fit: contain;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     nav a {
-      margin: 0 15px;
       color: black;
       text-decoration: none;
       font-size: 18px;
     }
 
-    .search-bar-container {
-      display: flex;
-      justify-content: center;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
-
     .search-bar {
+      display: flex;
+      max-width: 600px;
       width: 100%;
-      max-width: 400px;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: 2px solid #8a2be2;
-      border-radius: 50px;
-      outline: none;
-      background-color: #000;
-      color: white;
-      box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
-      transition: box-shadow 0.3s ease;
+      margin: 20px auto;
+      border: 1px solid #ccc;
     }
 
-    .search-bar:focus {
-      box-shadow: 0 0 15px #8a2be2, 0 0 30px #8a2be2;
+    .search-bar input[type="text"] {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+      border-right: 1px solid #ccc;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .search-bar button {
+      background-color: #8B0000;
+      border: none;
+      width: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     main {
@@ -196,6 +206,28 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .search-bar {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      .search-bar input[type="text"] {
+        width: 100%;
+      }
+
       .products-camisas, .products-tenis {
         grid-template-columns: 1fr;
       }
@@ -224,47 +256,59 @@
     <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </nav>
+  <div class="search-bar">
+    <input type="text" placeholder="Pesquisar..." />
+    <button type="submit">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff">
+        <path d="M10,2A8,8 0 1,0 18,10A8,8 0 0,0 10,2M22,22L16.65,16.65" stroke="#fff" stroke-width="2" fill="none"/>
+      </svg>
+    </button>
+  </div>
 </header>
 
-<div class="search-bar-container">
-  <input type="text" class="search-bar" placeholder="Buscar produtos...">
-</div>
-
 <main>
-  <!-- Conteúdo das seções de produtos (camisas e tênis) continua igual... -->
-</main>
+  <div class="collection-section">
+    <h2>Camisas em Promoção</h2>
+    <div class="products-camisas">
+      <!-- Produto 1 -->
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042715350100.png" alt="Canelada Americana">
+        </div>
+        <h3>Canelada Americana</h3>
+        <p>R$299</p>
+        <a href="canelada.americana.html" target="_blank"><button>VEM PRODUTO</button></a>
+      </div>
+      <!-- Produto 2 -->
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Palm Angels Track Pants">
+        </div>
+        <h3>Palm Angels Track Pants</h3>
+        <p>R$699</p>
+        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
+      </div>
+      <!-- Produto 3 -->
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Off-White T-shirt Basic">
+        </div>
+        <h3>Off-White T-shirt Basic</h3>
+        <p>R$499</p>
+        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
+      </div>
+      <!-- Produto 4 -->
+      <div class="product" data-aos="fade-up">
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Amiri Star Tee">
+        </div>
+        <h3>Amiri Star Tee</h3>
+        <p>R$549</p>
+        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
+      </div>
+    </div>
+  </div>
 
-<section class="contact" id="contato">
-  <h3>CONTATO</h3>
-  <p>Cole com a gente no Instagram!</p>
-  <a href="https://www.instagram.com/jottaimportz" target="_blank">NOSSO INSTAGRAM</a>
-</section>
-
-<section class="about" id="sobre">
-  <h3>SOBRE NÓS</h3>
-  <p>JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
-</section>
-
-<footer>
-  © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000, once: false });
-
-  const frases = [
-    "MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!",
-    "ESTILO IMPORTA. ORIGINALIDADE É ESSENCIAL!",
-    "SEU ESTILO, SUA HISTÓRIA. VISTA-SE PARA IMPACTAR!"
-  ];
-
-  let fraseAtual = 0;
-  setInterval(() => {
-    document.getElementById("announcement").innerText =
-      frases[++fraseAtual % frases.length];
-  }, 4000);
-</script>
-
-</body>
-</html>
+  <div class="collection-section">
+    <h2>Tênis em Promoção</h2>
+14
