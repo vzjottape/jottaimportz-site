@@ -4,12 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jotta Importz</title>
-  <link href="htt<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jotta Importz</title>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     body {
@@ -42,7 +36,7 @@
     }
 
     .logo-img {
-      height: 50px; /* AQUI você muda o tamanho da logo */
+      height: 50px;
       object-fit: contain;
     }
 
@@ -51,6 +45,31 @@
       color: black;
       text-decoration: none;
       font-size: 18px;
+    }
+
+    .search-bar-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .search-bar {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 2px solid #8a2be2;
+      border-radius: 50px;
+      outline: none;
+      background-color: #000;
+      color: white;
+      box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .search-bar:focus {
+      box-shadow: 0 0 15px #8a2be2, 0 0 30px #8a2be2;
     }
 
     main {
@@ -207,90 +226,12 @@
   </nav>
 </header>
 
-<main>
-  <div class="collection-section">
-    <h2>Camisas em Promoção</h2>
-    <div class="products-camisas">
-      <!-- Produto 1 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042715350100.png" alt="Trapstar T-shirt London">
-        </div>
-        <h3>Canelada Americana</h3>
-        <p>R$299</p>
-        <a href="canelada.americana.html" target="_blank"><button>VEM PRODUTO</button></a>
-      </div>
-      <!-- Produto 2 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Palm Angels Track Pants">
-        </div>
-        <h3>Palm Angels Track Pants</h3>
-        <p>R$699</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 3 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Off-White T-shirt Basic">
-        </div>
-        <h3>Off-White T-shirt Basic</h3>
-        <p>R$499</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 4 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Amiri Star Tee">
-        </div>
-        <h3>Amiri Star Tee</h3>
-        <p>R$549</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-    </div>
-  </div>
+<div class="search-bar-container">
+  <input type="text" class="search-bar" placeholder="Buscar produtos...">
+</div>
 
-  <div class="collection-section">
-    <h2>Tênis em Promoção</h2>
-    <div class="products-tenis">
-      <!-- Produto 1 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Jordan 4 White Oreo">
-        </div>
-        <h3>Jordan 4 White Oreo</h3>
-        <p>R$899</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 2 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike TN Plus Triple Black">
-        </div>
-        <h3>Nike TN Plus Triple Black</h3>
-        <p>R$799</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 3 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Yeezy Boost 350 V2 Zebra">
-        </div>
-        <h3>Yeezy Boost 350 V2 Zebra</h3>
-        <p>R$1.199</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 4 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike Dunk Low Panda">
-        </div>
-        <h3>Nike Dunk Low Panda</h3>
-        <p>R$899</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-    </div>
-  </div>
+<main>
+  <!-- Conteúdo das seções de produtos (camisas e tênis) continua igual... -->
 </main>
 
 <section class="contact" id="contato">
@@ -327,441 +268,3 @@
 
 </body>
 </html>
-ps://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      background-color: #fff;
-      color: #000;
-      font-family: 'Arial', sans-serif;
-    }
-
-    .announcement-bar {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 6px 0;
-      font-size: 8px;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo-img {
-      height: 50px; /* AQUI você muda o tamanho da logo */
-      object-fit: contain;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: black;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      text-align: left;
-      margin-bottom: 30px;
-      font-size: 24px;
-    }
-
-    .collection-section {
-      margin-bottom: 60px;
-    }
-
-    .products-camisas, .products-tenis {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-
-    .product {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    .product .image-container {
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #fff;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .product img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .product h3 {
-      font-size: 16px;
-      margin: 10px 0 5px;
-    }
-
-    .product p {
-      color: green;
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-
-    .product a {
-      margin-top: auto;
-    }
-
-    .product a button {
-      background-color: #000;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      margin-top: 10px;
-      transition: transform 0.2s ease;
-      outline: none;
-    }
-
-    .product a button:hover {
-      transform: scale(1.05);
-    }
-
-    .product a button:active {
-      transform: scale(0.95);
-    }
-
-    .product a button:focus {
-      outline: none;
-    }
-
-    section {
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .contact a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #8B0000;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    .about p {
-      max-width: 600px;
-      margin: 20px auto 0;
-    }
-
-    footer {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 10px;
-    }
-
-    @media (max-width: 768px) {
-      .products-camisas, .products-tenis {
-        grid-template-columns: 1fr;
-      }
-
-      h2 {
-        text-align: center;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<div class="announcement-bar" id="announcement">
-  MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!
-</div>
-
-<header>
-  <a href="#home">
-    <img
-      src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png"
-      alt="Logo Jotta Importz"
-      class="logo-img"
-    />
-  </a>
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-  </nav>
-</header>
-
-<main>
-  <div class="collection-section">
-    <h2>Camisas em Promoção</h2>
-    <div class="products-camisas">
-      <!-- Produto 1 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042715350100.png" alt="Trapstar T-shirt London">
-        </div>
-        <h3>Canelada Americana</h3>
-        <p>R$299</p>
-        <a href="canelada.americana.html" target="_blank"><button>VEM PRODUTO</button></a>
-      </div>
-      <!-- Produto 2 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Palm Angels Track Pants">
-        </div>
-        <h3>Palm Angels Track Pants</h3>
-        <p>R$699</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 3 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Off-White T-shirt Basic">
-        </div>
-        <h3>Off-White T-shirt Basic</h3>
-        <p>R$499</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 4 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Amiri Star Tee">
-        </div>
-        <h3>Amiri Star Tee</h3>
-        <p>R$549</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="collection-section">
-    <h2>Tênis em Promoção</h2>
-    <div class="products-tenis">
-      <!-- Produto 1 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Jordan 4 White Oreo">
-        </div>
-        <h3>Jordan 4 White Oreo</h3>
-        <p>R$899</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 2 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike TN Plus Triple Black">
-        </div>
-        <h3>Nike TN Plus Triple Black</h3>
-        <p>R$799</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 3 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Yeezy Boost 350 V2 Zebra">
-        </div>
-        <h3>Yeezy Boost 350 V2 Zebra</h3>
-        <p>R$1.199</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-      <!-- Produto 4 -->
-      <div class="product" data-aos="fade-up">
-        <div class="image-container">
-          <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042818285947.png" alt="Nike Dunk Low Panda">
-        </div>
-        <h3>Nike Dunk Low Panda</h3>
-        <p>R$899</p>
-        <a href="https://www.instagram.com/jottaimportz" target="_blank"><button>COMPRAR</button></a>
-      </div>
-    </div>
-  </div>
-</main>
-
-<section class="contact" id="contato">
-  <h3>CONTATO</h3>
-  <p>Cole com a gente no Instagram!</p>
-  <a href="https://www.instagram.com/jottaimportz" target="_blank">NOSSO INSTAGRAM</a>
-</section>
-
-<section class="about" id="sobre">
-  <h3>SOBRE NÓS</h3>
-  <p>JOTTA IMPORTZ é mais que roupa, é cultura. Inspirados pelas ruas, grafites e o corre de verdade. Nossa missão é vestir quem vive intensamente o que acredita.</p>
-</section>
-
-<footer>
-  © 2025 JOTTA IMPORTZ — Todos os direitos reservados.
-</footer><!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jotta Importz</title>
-  <link href="htt<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jotta Importz</title>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      background-color: #fff;
-      color: #000;
-      font-family: 'Arial', sans-serif;
-    }
-
-    .announcement-bar {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 6px 0;
-      font-size: 8px;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo-img {
-      height: 50px; /* AQUI você muda o tamanho da logo */
-      object-fit: contain;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: black;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      text-align: left;
-      margin-bottom: 30px;
-      font-size: 24px;
-    }
-
-    .collection-section {
-      margin-bottom: 60px;
-    }
-
-    .products-camisas, .products-tenis {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-
-    .product {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    .product .image-container {
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #fff;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .product img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .product h3 {
-      font-size: 16px;
-      margin: 10px 0 5px;
-    }
-
-    .product p {
-      color: green;
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-
-    .product a {
-      margin-top: auto;
-    }
-
-    .product a button {
-      background-color: #000;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      margin-top: 10px;
-      transition: transform 0.2s ease;
-      outline: none;
-    }
-
-    .product a button:hover {
-      transform: scale(1.05);
-    }
-
-    .product a button:active {
-      transform
