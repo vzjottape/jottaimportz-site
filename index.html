@@ -1,305 +1,264 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jotta Importz</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #fff;
       color: #000;
-    }
+    }.top-bar {
+  background-color: #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2000;
+}
 
-    .top-bar {
-      background-color: #000;
-      color: #fff;
-      font-size: 10px;
-      padding: 4px 0;
-      text-align: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 2000;
-      overflow: hidden;
-    }
+.top-bar span {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
 
-    .top-bar span {
-      display: inline-block;
-      animation: slideText 12s infinite;
-      white-space: nowrap;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  position: sticky;
+  top: 30px;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
 
-    @keyframes slideText {
-      0% { transform: translateY(0%); }
-      33% { transform: translateY(-100%); }
-      66% { transform: translateY(-200%); }
-      100% { transform: translateY(0%); }
-    }
+.logo-img {
+  height: 50px;
+}
 
-    .top-bar .text-wrapper {
-      height: 10px;
-      overflow: hidden;
-      display: inline-block;
-    }
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: #fff;
-      position: sticky;
-      top: 20px;
-      z-index: 1000;
-      flex-wrap: wrap;
-    }
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
 
-    .logo-img {
-      height: 50px;
-    }
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
 
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 8px;
+  background-color: #8b00ff;
+  box-shadow: 0 0 12px rgba(139, 0, 255, 0.4);
+}
 
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background-color: purple;
-    }
+.search-bar input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    nav a {
-      text-decoration: none;
-      color: black;
-      font-size: 16px;
-    }
+.search-bar button svg {
+  fill: #000;
+}
 
-    .search-bar {
-      display: flex;
-      width: 90%;
-      max-width: 800px;
-      margin: 30px auto;
-      border: 2px solid purple;
-      border-radius: 8px;
-      box-shadow: 0 0 12px rgba(128, 0, 128, 0.3);
-      background-color: white;
-    }
+.carousel-section {
+  padding: 40px 20px;
+}
 
-    .search-bar input[type="text"] {
-      flex: 1;
-      padding: 12px;
-      border: none;
-      font-size: 16px;
-      outline: none;
-      background-color: white;
-      color: black;
-    }
+.carousel-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+}
 
-    .search-bar button {
-      background-color: white;
-      border: none;
-      width: 50px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
 
-    .search-bar svg {
-      fill: black;
-      stroke: black;
-    }
+.carousel::-webkit-scrollbar {
+  display: none;
+}
 
-    .carousel-section {
-      padding: 40px 20px;
-    }
+.product-card {
+  min-width: 200px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-    .carousel-section h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
 
-    .product-carousel {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding-bottom: 10px;
-    }
+.product-card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
 
-    .product {
-      min-width: 200px;
-      background-color: white;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      flex-shrink: 0;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-    }
+.product-card p {
+  color: green;
+  font-weight: bold;
+  font-size: 14px;
+}
 
-    .product img {
-      width: 100%;
-      height: 180px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 10px;
+  margin-top: 60px;
+}
 
-    .product h3 {
-      font-size: 14px;
-      margin: 5px 0;
-    }
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
 
-    .product p {
-      color: green;
-      font-weight: bold;
-      font-size: 14px;
-    }
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+  }
+}
 
-    .product a button {
-      background-color: black;
-      color: white;
-      border: none;
-      padding: 8px;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .search-bar {
-        width: 95%;
-      }
-    }
   </style>
 </head>
 <body>
-
   <div class="top-bar">
-    <div class="text-wrapper">
-      <span>FRETE GRÁTIS EM TODOS OS PRODUTOS!</span><br/>
-      <span>APROVEITE PROMOÇÕES DE LANÇAMENTO!</span><br/>
-      <span>SEJA ESTILO, SEJA JOTTA IMPORTZ!</span>
-    </div>
-  </div>
+    <span id="topText">FRETE GRÁTIS EM TODOS OS PRODUTOS!</span>
+  </div>  <header>
+    <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" class="logo-img" /><div class="menu-toggle">&#9776;</div>
 
-  <header>
-    <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" class="logo-img" />
-    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+<nav>
+  <a href="#sobre">Sobre</a>
+  <a href="#contato">Contato</a>
+</nav>
 
-  <div class="search-bar">
+  </header>  <div class="search-bar">
     <input type="text" placeholder="Pesquisar..." />
     <button type="submit">
       <svg viewBox="0 0 24 24" width="20" height="20">
-        <path d="M10,2A8,8 0 1,0 18,10A8,8 0 0,0 10,2M22,22L16.65,16.65" stroke-width="2" fill="none"/>
+        <path d="M10,2A8,8 0 1,0 18,10A8,8 0 0,0 10,2M22,22L16.65,16.65" stroke="#000" stroke-width="2" fill="none"/>
       </svg>
     </button>
-  </div>
-
-  <section class="carousel-section">
+  </div>  <section class="carousel-section">
     <h2>Promoções</h2>
-    <div class="product-carousel">
-      <!-- Repetir este bloco com diferentes produtos -->
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+1" alt="Produto 1" />
+    <div class="carousel">
+      <!-- 10 produtos -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 1" />
         <h3>Produto 1</h3>
-        <p>R$199</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$100</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+2" alt="Produto 2" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 2" />
         <h3>Produto 2</h3>
-        <p>R$299</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$120</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+3" alt="Produto 3" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 3" />
         <h3>Produto 3</h3>
-        <p>R$399</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$150</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+4" alt="Produto 4" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 4" />
         <h3>Produto 4</h3>
-        <p>R$499</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$200</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+5" alt="Produto 5" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 5" />
         <h3>Produto 5</h3>
-        <p>R$599</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$180</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+6" alt="Produto 6" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 6" />
         <h3>Produto 6</h3>
-        <p>R$699</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$220</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+7" alt="Produto 7" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 7" />
         <h3>Produto 7</h3>
-        <p>R$799</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$300</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+8" alt="Produto 8" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 8" />
         <h3>Produto 8</h3>
-        <p>R$899</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$250</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+9" alt="Produto 9" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 9" />
         <h3>Produto 9</h3>
-        <p>R$999</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$275</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x180?text=Produto+10" alt="Produto 10" />
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Produto 10" />
         <h3>Produto 10</h3>
-        <p>R$1099</p>
-        <a href="#"><button>COMPRAR</button></a>
+        <p>R$199</p>
       </div>
     </div>
-  </section>
+  </section>  <footer>
+    &copy; 2025 Jotta Importz. Todos os direitos reservados.
+  </footer>  <script>
+    const frases = [
+      "FRETE GRÁTIS EM TODOS OS PRODUTOS!",
+      "APROVEITE PROMOÇÕES DE LANÇAMENTO!",
+      "SEJA ESTILO, SEJA JOTTA IMPORTZ!"
+    ];
+    let index = 0;
+    const topText = document.getElementById("topText");
 
-</body>
+    function trocarFrase() {
+      topText.style.opacity = 0;
+      setTimeout(() => {
+        topText.textContent = frases[index];
+        topText.style.opacity = 1;
+        index = (index + 1) % frases.length;
+      }, 500);
+    }
+
+    setInterval(trocarFrase, 3000);
+    topText.style.opacity = 1;
+  </script></body>
 </html>
