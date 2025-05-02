@@ -12,6 +12,16 @@
       color: #000;
     }
 
+    .top-bar {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      padding: 4px 10px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -116,6 +126,10 @@
 </head>
 <body>
 
+<div class="top-bar" id="topBar">
+  Frete grátis para todo o Brasil!
+</div>
+
 <header>
   <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" class="logo-img">
 
@@ -154,6 +168,19 @@
   function toggleMenu() {
     document.getElementById('menu').classList.toggle('show');
   }
+
+  // Frases rotativas da barra superior
+  const frases = [
+    "Frete grátis para todo o Brasil!",
+    "Promoções exclusivas toda semana!",
+    "Estilo não se compra... se importa."
+  ];
+  let fraseAtual = 0;
+
+  setInterval(() => {
+    fraseAtual = (fraseAtual + 1) % frases.length;
+    document.getElementById("topBar").textContent = frases[fraseAtual];
+  }, 4000);
 </script>
 
 </body>
