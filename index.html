@@ -89,7 +89,6 @@
       transition: all 0.3s ease;
     }
 
-    /* Overlay de fundo escuro */
     .overlay {
       position: fixed;
       top: 0;
@@ -105,14 +104,13 @@
       display: block;
     }
 
-    /* Menu lateral */
     .side-menu {
       position: fixed;
       top: 0;
       right: -300px;
       width: 250px;
       height: 100%;
-      background: rgba(255, 255, 255, 0.95); /* Transparente */
+      background: rgba(255, 255, 255, 0.95);
       box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
       padding: 20px;
       transition: right 0.3s ease;
@@ -135,7 +133,7 @@
 
     .close-btn {
       align-self: flex-end;
-      font-size: 32px; /* Maior tamanho */
+      font-size: 32px;
       cursor: pointer;
       color: #8000FF;
       border: none;
@@ -144,6 +142,38 @@
 
     main {
       padding: 20px;
+    }
+
+    /* Estilo da seção de promoções */
+    #promocoes {
+      margin-top: 40px;
+    }
+
+    .carousel-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 16px;
+    }
+
+    .product-card {
+      min-width: 160px;
+      height: 200px;
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -179,6 +209,25 @@
 </div>
 
 <main>
+
+  <section id="promocoes">
+    <h2 style="margin-bottom: 10px;">Promoções</h2>
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="product-card">Produto 1</div>
+        <div class="product-card">Produto 2</div>
+        <div class="product-card">Produto 3</div>
+        <div class="product-card">Produto 4</div>
+        <div class="product-card">Produto 5</div>
+        <div class="product-card">Produto 6</div>
+        <div class="product-card">Produto 7</div>
+        <div class="product-card">Produto 8</div>
+        <div class="product-card">Produto 9</div>
+        <div class="product-card">Produto 10</div>
+      </div>
+    </div>
+  </section>
+
   <section id="sobre">
     <h2>Sobre nós</h2>
     <p>Bem-vindo à Jotta Importz! Trabalhamos com importações de roupas premium com estilo e autenticidade.</p>
@@ -198,7 +247,6 @@
     overlay.classList.toggle("active");
   }
 
-  // Frases rotativas da barra superior
   const frases = [
     "Frete grátis para todo o Brasil!",
     "Promoções exclusivas toda semana!",
