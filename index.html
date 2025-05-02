@@ -2,147 +2,165 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jotta Importz</title>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      background-color: #fff;
-      color: #000;
-      font-family: 'Arial', sans-serif;
-    }
-
-    .announcement-bar {
+      font-family: Arial, sans-serif;
       background-color: #000;
       color: #fff;
-      text-align: center;
-      padding: 6px 0;
-      font-size: 8px;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      background-color: #fff;
+      padding: 16px 20px;
+      background: #000;
       position: sticky;
       top: 0;
       z-index: 1000;
-      flex-wrap: wrap;
     }
 
     .logo-img {
       height: 50px;
-      object-fit: contain;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background-color: #8000FF;
+      border-radius: 8px;
+      padding: 6px 10px;
+      box-shadow: 0 0 12px #8000FF;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: white;
+      padding: 6px;
+      width: 160px;
+    }
+
+    .search-box svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #8000FF;
+      transition: all 0.3s ease;
     }
 
     nav {
       display: flex;
-      align-items: center;
-      gap: 15px;
+      gap: 20px;
     }
 
     nav a {
-      color: black;
       text-decoration: none;
-      font-size: 18px;
-    }
-
-    .search-bar {
-      display: flex;
-      max-width: 600px;
-      width: 100%;
-      margin: 20px auto;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(128, 0, 128, 0.6); /* Neon glow */
-      overflow: hidden;
-    }
-
-    .search-bar input[type="text"] {
-      flex: 1;
-      padding: 12px;
-      border: none;
+      color: #8000FF;
       font-size: 16px;
-      outline: none;
-      background-color: #ffffff;
-      color: #000000;
+      font-weight: bold;
     }
 
-    .search-bar button {
-      background-color: purple;
-      border: none;
-      width: 50px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #111;
+      padding: 10px 20px;
     }
 
-    .search-bar button svg {
-      width: 20px;
-      height: 20px;
-      stroke: white;
-      fill: none;
+    .mobile-menu a {
+      color: #8000FF;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
     }
-
-    /* ...demais estilos seguem igual... */
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
       nav {
-        margin-top: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        display: none;
       }
 
-      .search-bar {
-        margin-left: 0;
-        margin-top: 10px;
-        width: 100%;
+      .hamburger {
+        display: flex;
       }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+
+      .search-box input {
+        width: 100px;
+      }
+    }
+
+    main {
+      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-<div class="announcement-bar" id="announcement">
-  MAIS PEÇAS, MAIS HISTÓRIA PARA CONTAR!
-</div>
-
 <header>
-  <a href="#home">
-    <img
-      src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png"
-      alt="Logo Jotta Importz"
-      class="logo-img"
-    />
-  </a>
+  <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" class="logo-img">
+
+  <div class="search-box">
+    <input type="text" placeholder="Buscar...">
+    <svg viewBox="0 0 512 512">
+      <path d="M505 442.7L405.3 343c28.4-35.3 45.5-80 45.5-128C450.8 96.5 354.3 0 233.4 0S16 96.5 16 215.1s96.5 215.1 215.1 215.1c48 0 92.7-17.1 128-45.5l99.7 99.7c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-34zM233.4 368c-84.2 0-152.9-68.7-152.9-152.9S149.2 62.2 233.4 62.2 386.3 130.9 386.3 215 317.6 368 233.4 368z"/>
+    </svg>
+  </div>
+
   <nav>
     <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </nav>
-  <div class="search-bar">
-    <input type="text" placeholder="Pesquisar..." />
-    <button type="submit">
-      <svg viewBox="0 0 24 24">
-        <circle cx="10" cy="10" r="7" stroke-width="2"></circle>
-        <line x1="21" y1="21" x2="15" y2="15" stroke-width="2"></line>
-      </svg>
-    </button>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </header>
 
-<!-- ...restante do conteúdo permanece igual... -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre">Sobre</a>
+  <a href="#contato">Contato</a>
+</div>
+
+<main>
+  <section id="sobre">
+    <h2>Sobre nós</h2>
+    <p>Bem-vindo à Jotta Importz! Trabalhamos com importações de roupas premium com estilo e autenticidade.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Nos chame no Instagram: <a href="https://www.instagram.com/jottaimportz" target="_blank" style="color: #8000FF;">@jottaimportz</a></p>
+  </section>
+</main>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('show');
+  }
+</script>
 
 </body>
 </html>
