@@ -66,7 +66,7 @@
     }
 
     .hamburger {
-      display: none;
+      display: flex;
       flex-direction: column;
       cursor: pointer;
       gap: 5px;
@@ -79,19 +79,7 @@
       transition: all 0.3s ease;
     }
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #8000FF;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .mobile-menu {
+    .menu {
       display: none;
       flex-direction: column;
       gap: 10px;
@@ -100,34 +88,24 @@
       width: 100%;
     }
 
-    .mobile-menu a {
+    .menu.show {
+      display: flex;
+    }
+
+    .menu a {
       color: #8000FF;
       text-decoration: none;
       font-size: 16px;
       font-weight: bold;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .mobile-menu.show {
-        display: flex;
-      }
-
-      .search-box {
-        width: 100%;
-        max-width: none;
+    @media (min-width: 769px) {
+      .menu {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        background: transparent;
+        padding: 0;
       }
     }
 
@@ -148,11 +126,6 @@
     </svg>
   </div>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#contato">Contato</a>
-  </nav>
-
   <div class="hamburger" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -160,7 +133,7 @@
   </div>
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
+<div class="menu" id="menu">
   <a href="#sobre">Sobre</a>
   <a href="#contato">Contato</a>
 </div>
@@ -179,7 +152,7 @@
 
 <script>
   function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('show');
+    document.getElementById('menu').classList.toggle('show');
   }
 </script>
 
