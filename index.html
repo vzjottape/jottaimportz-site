@@ -2,186 +2,264 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jotta Importz</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #ffffff;
+      background-color: #fff;
       color: #000;
     }
 
+    /* Barra preta fininha no topo */
     .top-bar {
       background-color: #000;
       color: #fff;
+      font-size: 10px;
+      padding: 4px 0;
       text-align: center;
-      font-size: 12px;
-      padding: 4px 10px;
-      letter-spacing: 1px;
-      font-weight: bold;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 2000;
+      overflow: hidden;
+    }
+
+    .top-bar span {
+      display: inline-block;
+      animation: slideText 12s infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes slideText {
+      0% { transform: translateY(0%); }
+      33% { transform: translateY(-100%); }
+      66% { transform: translateY(-200%); }
+      100% { transform: translateY(0%); }
+    }
+
+    .top-bar .text-wrapper {
+      height: 10px;
+      overflow: hidden;
+      display: inline-block;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 20px;
-      background: #fff;
+      padding: 20px 40px;
+      background-color: #fff;
       position: sticky;
-      top: 0;
+      top: 20px;
       z-index: 1000;
       flex-wrap: wrap;
-      gap: 20px;
     }
 
     .logo-img {
       height: 50px;
     }
 
-    .search-box {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      background-color: #ffffff;
-      border: 2px solid #8000FF;
-      border-radius: 8px;
-      padding: 6px 10px;
-      box-shadow:
-        0 0 4px rgba(128, 0, 255, 0.15),
-        0 0 10px rgba(128, 0, 255, 0.1),
-        0 0 16px rgba(128, 0, 255, 0.08);
-      transition: box-shadow 0.3s ease;
-      max-width: 600px;
-    }
-
-    .search-box input {
-      border: none;
-      outline: none;
-      background: transparent;
-      color: #000000;
-      padding: 6px;
-      width: 100%;
-      font-size: 14px;
-    }
-
-    .search-box input::placeholder {
-      color: #000;
-    }
-
-    .search-box svg {
-      width: 20px;
-      height: 20px;
-      fill: #000000;
-    }
-
-    .hamburger {
-      display: flex;
+    .menu-toggle {
+      display: none;
       flex-direction: column;
       cursor: pointer;
       gap: 5px;
     }
 
-    .hamburger div {
+    .menu-toggle div {
       width: 25px;
       height: 3px;
-      background-color: #8000FF;
-      transition: all 0.3s ease;
+      background-color: purple;
     }
 
-    .menu {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      background-color: #fff;
-      padding: 10px 20px;
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+    }
+
+    .search-bar {
+      display: flex;
+      width: 90%;
+      max-width: 800px;
+      margin: 30px auto;
+      border: 2px solid purple;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(128, 0, 128, 0.4);
+      background-color: white;
+    }
+
+    .search-bar input[type="text"] {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+      background-color: white;
+      color: black;
+    }
+
+    .search-bar button {
+      background-color: white;
+      border: none;
+      width: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-bar svg {
+      fill: black;
+      stroke: black;
+    }
+
+    .carousel-section {
+      padding: 40px 20px;
+    }
+
+    .carousel-section h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .product-carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .product {
+      min-width: 200px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      flex-shrink: 0;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .product p {
+      color: green;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .product a button {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 4px;
+      cursor: pointer;
       width: 100%;
     }
 
-    .menu.show {
-      display: flex;
-    }
-
-    .menu a {
-      color: #8000FF;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    @media (min-width: 769px) {
-      .menu {
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        background: transparent;
-        padding: 0;
+    /* Responsivo */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
       }
-    }
 
-    main {
-      padding: 20px;
+      nav {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .search-bar {
+        width: 95%;
+      }
     }
   </style>
 </head>
 <body>
 
-<div class="top-bar" id="topBar">
-  Frete grátis para todo o Brasil!
-</div>
-
-<header>
-  <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" class="logo-img">
-
-  <div class="search-box">
-    <input type="text" placeholder="Buscar...">
-    <svg viewBox="0 0 512 512">
-      <path d="M505 442.7L405.3 343c28.4-35.3 45.5-80 45.5-128C450.8 96.5 354.3 0 233.4 0S16 96.5 16 215.1s96.5 215.1 215.1 215.1c48 0 92.7-17.1 128-45.5l99.7 99.7c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-34zM233.4 368c-84.2 0-152.9-68.7-152.9-152.9S149.2 62.2 233.4 62.2 386.3 130.9 386.3 215 317.6 368 233.4 368z"/>
-    </svg>
+  <div class="top-bar">
+    <div class="text-wrapper">
+      <span>FRETE GRÁTIS EM TODOS OS PRODUTOS!</span><br/>
+      <span>APROVEITE PROMOÇÕES DE LANÇAMENTO!</span><br/>
+      <span>SEJA ESTILO, SEJA JOTTA IMPORTZ!</span>
+    </div>
   </div>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
+  <header>
+    <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" class="logo-img" />
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Pesquisar..." />
+    <button type="submit">
+      <svg viewBox="0 0 24 24" width="20" height="20">
+        <path d="M10,2A8,8 0 1,0 18,10A8,8 0 0,0 10,2M22,22L16.65,16.65" stroke-width="2" fill="none"/>
+      </svg>
+    </button>
   </div>
-</header>
 
-<div class="menu" id="menu">
-  <a href="#sobre">Sobre</a>
-  <a href="#contato">Contato</a>
-</div>
-
-<main>
-  <section id="sobre">
-    <h2>Sobre nós</h2>
-    <p>Bem-vindo à Jotta Importz! Trabalhamos com importações de roupas premium com estilo e autenticidade.</p>
+  <section class="carousel-section">
+    <h2>Promoções</h2>
+    <div class="product-carousel">
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042715350100.png" alt="Produto 1" />
+        <h3>Canelada Americana</h3>
+        <p>R$299</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Produto 2" />
+        <h3>Palm Angels Track Pants</h3>
+        <p>R$699</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <div class="product">
+        <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042820312019.png" alt="Produto 3" />
+        <h3>Off-White T-shirt</h3>
+        <p>R$499</p>
+        <a href="#"><button>COMPRAR</button></a>
+      </div>
+      <!-- Adicione mais produtos se quiser -->
+    </div>
   </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Nos chame no Instagram: <a href="https://www.instagram.com/jottaimportz" target="_blank" style="color: #8000FF;">@jottaimportz</a></p>
-  </section>
-</main>
-
-<script>
-  function toggleMenu() {
-    document.getElementById('menu').classList.toggle('show');
-  }
-
-  // Frases rotativas da barra superior
-  const frases = [
-    "Frete grátis para todo o Brasil!",
-    "Promoções exclusivas toda semana!",
-    "Estilo não se compra... se importa."
-  ];
-  let fraseAtual = 0;
-
-  setInterval(() => {
-    fraseAtual = (fraseAtual + 1) % frases.length;
-    document.getElementById("topBar").textContent = frases[fraseAtual];
-  }, 4000);
-</script>
 
 </body>
 </html>
