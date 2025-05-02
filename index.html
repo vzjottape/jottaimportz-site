@@ -10,6 +10,7 @@
       font-family: Arial, sans-serif;
       background-color: #ffffff;
       color: #000;
+      overflow-x: hidden;
     }
 
     .top-bar {
@@ -31,8 +32,6 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      flex-wrap: wrap;
-      gap: 20px;
     }
 
     .logo-img {
@@ -53,6 +52,7 @@
         0 0 16px rgba(128, 0, 255, 0.08);
       transition: box-shadow 0.3s ease;
       max-width: 600px;
+      margin: 0 20px;
     }
 
     .search-box input {
@@ -89,47 +89,57 @@
       transition: all 0.3s ease;
     }
 
-    .menu {
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background-color: #fff;
-      border: 2px solid #8000FF;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      padding: 15px 20px;
+    /* Overlay de fundo escuro */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
       display: none;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1001;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 999;
     }
 
-    .menu.show {
+    .overlay.active {
+      display: block;
+    }
+
+    /* Menu lateral */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 250px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      transition: right 0.3s ease;
+      z-index: 1000;
       display: flex;
-      opacity: 1;
-      transform: translateY(0);
+      flex-direction: column;
+      gap: 20px;
     }
 
-    .menu a {
-      color: #8000FF;
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu a {
       text-decoration: none;
-      font-size: 16px;
+      color: #8000FF;
       font-weight: bold;
+      font-size: 18px;
     }
 
-    @media (min-width: 769px) {
-      .menu {
-        position: static;
-        flex-direction: row;
-        border: none;
-        box-shadow: none;
-        transform: none;
-        opacity: 1 !important;
-        display: flex !important;
-        padding: 0;
-        background: transparent;
-      }
+    .close-btn {
+      align-self: flex-end;
+      font-size: 20px;
+      cursor: pointer;
+      color: #8000FF;
+      border: none;
+      background: none;
     }
 
     main {
@@ -153,14 +163,17 @@
     </svg>
   </div>
 
-  <div class="hamburger" onclick="toggleMenu()">
+  <div class="hamburger" onclick="toggleSideMenu()">
     <div></div>
     <div></div>
     <div></div>
   </div>
 </header>
 
-<div class="menu" id="menu">
+<div class="overlay" id="overlay" onclick="toggleSideMenu()"></div>
+
+<div class="side-menu" id="sideMenu">
+  <button class="close-btn" onclick="toggleSideMenu()">×</button>
   <a href="#sobre">Sobre</a>
   <a href="#contato">Contato</a>
 </div>
@@ -178,8 +191,11 @@
 </main>
 
 <script>
-  function toggleMenu() {
-    document.getElementById('menu').classList.toggle('show');
+  function toggleSideMenu() {
+    const sideMenu = document.getElementById("sideMenu");
+    const overlay = document.getElementById("overlay");
+    sideMenu.classList.toggle("active");
+    overlay.classList.toggle("active");
   }
 
   // Frases rotativas da barra superior
