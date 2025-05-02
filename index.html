@@ -38,9 +38,9 @@
       border-radius: 8px;
       padding: 6px 10px;
       box-shadow:
-        0 0 6px rgba(128, 0, 255, 0.25),
-        0 0 14px rgba(128, 0, 255, 0.15),
-        0 0 22px rgba(128, 0, 255, 0.1);
+        0 0 4px rgba(128, 0, 255, 0.15),
+        0 0 10px rgba(128, 0, 255, 0.1),
+        0 0 16px rgba(128, 0, 255, 0.08);
       transition: box-shadow 0.3s ease;
       max-width: 600px;
     }
@@ -162,3 +162,26 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#sobre">Sobre</a>
+  <a href="#contato">Contato</a>
+</div>
+
+<main>
+  <section id="sobre">
+    <h2>Sobre nós</h2>
+    <p>Bem-vindo à Jotta Importz! Trabalhamos com importações de roupas premium com estilo e autenticidade.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Nos chame no Instagram: <a href="https://www.instagram.com/jottaimportz" target="_blank" style="color: #8000FF;">@jottaimportz</a></p>
+  </section>
+</main>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>
