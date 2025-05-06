@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,235 +10,271 @@
       background-color: #ffffff;
       color: #000;
       overflow-x: hidden;
-    }
+    }.top-bar {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 4px 10px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
 
-    .top-bar {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      font-size: 12px;
-      padding: 4px 10px;
-      letter-spacing: 1px;
-      font-weight: bold;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+.logo-img {
+  height: 50px;
+}
 
-    .logo-img {
-      height: 50px;
-    }
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  box-shadow:
+    0 0 4px rgba(128, 0, 255, 0.15),
+    0 0 10px rgba(128, 0, 255, 0.1),
+    0 0 16px rgba(128, 0, 255, 0.08);
+  transition: box-shadow 0.3s ease;
+  max-width: 600px;
+  margin: 0 20px;
+}
 
-    .search-box {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      background-color: #ffffff;
-      border-radius: 8px;
-      padding: 6px 10px;
-      box-shadow:
-        0 0 4px rgba(128, 0, 255, 0.15),
-        0 0 10px rgba(128, 0, 255, 0.1),
-        0 0 16px rgba(128, 0, 255, 0.08);
-      transition: box-shadow 0.3s ease;
-      max-width: 600px;
-      margin: 0 20px;
-    }
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #000000;
+  padding: 6px;
+  width: 100%;
+  font-size: 14px;
+}
 
-    .search-box input {
-      border: none;
-      outline: none;
-      background: transparent;
-      color: #000000;
-      padding: 6px;
-      width: 100%;
-      font-size: 14px;
-    }
+.search-box input::placeholder {
+  color: #000;
+}
 
-    .search-box input::placeholder {
-      color: #000;
-    }
+.search-box svg {
+  width: 20px;
+  height: 20px;
+  fill: #000000;
+}
 
-    .search-box svg {
-      width: 20px;
-      height: 20px;
-      fill: #000000;
-    }
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #8000FF;
+  transition: all 0.3s ease;
+}
 
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #8000FF;
-      transition: all 0.3s ease;
-    }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 999;
+}
 
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      display: none;
-      z-index: 999;
-    }
+.overlay.active {
+  display: block;
+}
 
-    .overlay.active {
-      display: block;
-    }
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: -300px;
-      width: 250px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      transition: right 0.3s ease;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.side-menu.active {
+  right: 0;
+}
 
-    .side-menu.active {
-      right: 0;
-    }
+.side-menu a {
+  text-decoration: none;
+  color: #8000FF;
+  font-weight: bold;
+  font-size: 18px;
+}
 
-    .side-menu a {
-      text-decoration: none;
-      color: #8000FF;
-      font-weight: bold;
-      font-size: 18px;
-    }
+.close-btn {
+  align-self: flex-end;
+  font-size: 32px;
+  cursor: pointer;
+  color: #8000FF;
+  border: none;
+  background: none;
+}
 
-    .close-btn {
-      align-self: flex-end;
-      font-size: 32px;
-      cursor: pointer;
-      color: #8000FF;
-      border: none;
-      background: none;
-    }
+main {
+  padding: 20px;
+}
 
-    main {
-      padding: 20px;
-    }
+#promocoes {
+  margin-top: 40px;
+}
 
-    #promocoes {
-      margin-top: 40px;
-    }
+.carousel-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 10px;
+}
 
-    .carousel-container {
-      overflow-x: auto; /* Manter a rolagem horizontal */
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding: 0 10px;
-    }
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
 
-    .carousel-container::-webkit-scrollbar {
-      display: none; /* Esconder a barra de rolagem */
-    }
+.carousel {
+  display: flex;
+  gap: 16px;
+}
 
-    .carousel {
-      display: flex;
-      gap: 16px;
-    }
+.product-card {
+  min-width: 160px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
 
-    .product-card {
-      min-width: 160px;
-      height: 200px;
-      background-color: #f4f4f4;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      flex-shrink: 0;
-    }
+.product-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.product-name {
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.product-price {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.product-price s {
+  color: #888;
+  margin-right: 5px;
+}
+
+.product-price strong {
+  color: #e60000;
+}
+
   </style>
 </head>
-<body>
-
-<div class="top-bar" id="topBar">
+<body><div class="top-bar" id="topBar">
   Frete grátis para todo o Brasil!
-</div>
-
-<header>
-  <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" class="logo-img">
-
-  <div class="search-box">
+</div><header>
+  <img src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" class="logo-img">  <div class="search-box">
     <input type="text" placeholder="Buscar...">
     <svg viewBox="0 0 512 512">
       <path d="M505 442.7L405.3 343c28.4-35.3 45.5-80 45.5-128C450.8 96.5 354.3 0 233.4 0S16 96.5 16 215.1s96.5 215.1 215.1 215.1c48 0 92.7-17.1 128-45.5l99.7 99.7c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-34zM233.4 368c-84.2 0-152.9-68.7-152.9-152.9S149.2 62.2 233.4 62.2 386.3 130.9 386.3 215 317.6 368 233.4 368z"/>
     </svg>
-  </div>
-
-  <div class="hamburger" onclick="toggleSideMenu()">
+  </div>  <div class="hamburger" onclick="toggleSideMenu()">
     <div></div>
     <div></div>
     <div></div>
   </div>
-</header>
-
-<div class="overlay" id="overlay" onclick="toggleSideMenu()"></div>
-
-<div class="side-menu" id="sideMenu">
+</header><div class="overlay" id="overlay" onclick="toggleSideMenu()"></div><div class="side-menu" id="sideMenu">
   <button class="close-btn" onclick="toggleSideMenu()">×</button>
   <a href="#sobre">Sobre</a>
   <a href="#contato">Contato</a>
-</div>
-
-<main>
-
+</div><main>
   <section id="promocoes">
     <h2 style="margin-bottom: 10px;">Promoções</h2>
     <div class="carousel-container">
       <div class="carousel">
-        <div class="product-card">Produto 1</div>
-        <div class="product-card">Produto 2</div>
-        <div class="product-card">Produto 3</div>
-        <div class="product-card">Produto 4</div>
-        <div class="product-card">Produto 5</div>
-        <div class="product-card">Produto 6</div>
-        <div class="product-card">Produto 7</div>
-        <div class="product-card">Produto 8</div>
-        <div class="product-card">Produto 9</div>
-        <div class="product-card">Produto 10</div>
+        <!-- Produtos -->
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?tshirt" alt="Camiseta Masculina">
+          <div class="product-name">Camiseta Street</div>
+          <div class="product-price"><s>R$ 99,90</s><strong> R$ 69,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?jacket" alt="Jaqueta">
+          <div class="product-name">Jaqueta Premium</div>
+          <div class="product-price"><s>R$ 199,90</s><strong> R$ 149,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?pants" alt="Calça">
+          <div class="product-name">Calça Cargo</div>
+          <div class="product-price"><s>R$ 159,90</s><strong> R$ 119,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?hoodie" alt="Moletom">
+          <div class="product-name">Moletom Oversized</div>
+          <div class="product-price"><s>R$ 179,90</s><strong> R$ 129,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?shoes" alt="Tênis">
+          <div class="product-name">Tênis Urban</div>
+          <div class="product-price"><s>R$ 249,90</s><strong> R$ 199,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?sneakers" alt="Tênis">
+          <div class="product-name">Sneaker Preto</div>
+          <div class="product-price"><s>R$ 299,90</s><strong> R$ 219,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?cap" alt="Boné">
+          <div class="product-name">Boné Estiloso</div>
+          <div class="product-price"><s>R$ 89,90</s><strong> R$ 59,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?jeans" alt="Jeans">
+          <div class="product-name">Jeans Slim Fit</div>
+          <div class="product-price"><s>R$ 179,90</s><strong> R$ 129,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?socks" alt="Meias">
+          <div class="product-name">Kit Meias</div>
+          <div class="product-price"><s>R$ 49,90</s><strong> R$ 29,90</strong></div>
+        </div>
+        <div class="product-card">
+          <img src="https://source.unsplash.com/160x160/?sunglasses" alt="Óculos">
+          <div class="product-name">Óculos Moderno</div>
+          <div class="product-price"><s>R$ 129,90</s><strong> R$ 99,90</strong></div>
+        </div>
       </div>
     </div>
   </section>
-
-  <section id="sobre">
-    <h2>Sobre nós</h2>
-    <p>Bem-vindo à Jotta Importz! Trabalhamos com importações de roupas premium com estilo e autenticidade.</p>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Nos chame no Instagram: <a href="https://www.instagram.com/jottaimportz" target="_blank" style="color: #8000FF;">@jottaimportz</a></p>
-  </section>
-
-</main>
-
-<script>
+</main><script>
   function toggleSideMenu() {
     const sideMenu = document.getElementById("sideMenu");
     const overlay = document.getElementById("overlay");
@@ -258,7 +293,5 @@
     fraseAtual = (fraseAtual + 1) % frases.length;
     document.getElementById("topBar").textContent = frases[fraseAtual];
   }, 6000);
-</script>
-
-</body>
-</html>
+</script></body>
+          </html>
