@@ -148,17 +148,15 @@
     }
 
     .carousel-container {
-      overflow-x: hidden; /* Modificado para ocultar as barras de rolagem */
+      overflow-x: auto; /* Manter a rolagem horizontal */
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 0 10px; /* Ajuste para não ter corte nos produtos */
-      margin: 0 -10px; /* Puxando o conteúdo para dentro da tela */
-      box-sizing: content-box;
+      padding: 0 10px;
     }
 
     .carousel-container::-webkit-scrollbar {
-      display: none;
+      display: none; /* Esconder a barra de rolagem */
     }
 
     .carousel {
