@@ -148,10 +148,13 @@
     }
 
     .carousel-container {
-      overflow-x: auto;
+      overflow-x: hidden; /* Modificado para ocultar as barras de rolagem */
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
+      padding: 0 10px; /* Ajuste para não ter corte nos produtos */
+      margin: 0 -10px; /* Puxando o conteúdo para dentro da tela */
+      box-sizing: content-box;
     }
 
     .carousel-container::-webkit-scrollbar {
@@ -235,6 +238,7 @@
     <h2>Contato</h2>
     <p>Nos chame no Instagram: <a href="https://www.instagram.com/jottaimportz" target="_blank" style="color: #8000FF;">@jottaimportz</a></p>
   </section>
+
 </main>
 
 <script>
