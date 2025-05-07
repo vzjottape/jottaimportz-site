@@ -23,9 +23,9 @@
     }
 
     .header-content {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 1rem;
     }
 
@@ -44,30 +44,8 @@
       border-radius: 2px;
     }
 
-    .logo-container {
-      display: flex;
-      justify-content: center;
-    }
-
     .logo {
       height: 35px;
-    }
-
-    .search-container {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .search-container input {
-      width: 100%;
-      max-width: 250px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 50px;
-      font-size: 16px;
-      outline: none;
-      background: #fff;
-      box-shadow: 0 0 6px 1px rgba(128, 0, 255, 0.15);
     }
 
     .section-title {
@@ -124,25 +102,6 @@
       color: #e60000;
       font-weight: bold;
     }
-
-    @media (max-width: 768px) {
-      .header-content {
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto;
-      }
-
-      .logo-container {
-        justify-content: flex-start;
-        grid-column: 1 / 2;
-      }
-
-      .search-container {
-        grid-column: 1 / 3;
-        width: 100%;
-        margin-top: 10px;
-        justify-content: center;
-      }
-    }
   </style>
 </head>
 <body>
@@ -154,12 +113,7 @@
         <span></span>
         <span></span>
       </div>
-      <div class="logo-container">
-        <img class="logo" src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" />
-      </div>
-      <div class="search-container">
-        <input type="text" placeholder="Buscar..." />
-      </div>
+      <img class="logo" src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz" />
     </div>
   </header>
 
