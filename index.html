@@ -9,18 +9,143 @@
       padding: 0;
       background-color: #fff;
       font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
-    img {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      max-height: 80px;
+    }
+    .search-container {
+      position: relative;
+      flex: 1;
+      margin: 0 2rem;
+    }
+    .search-container input {
+      width: 100%;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      outline: none;
+      background: #fff;
+      box-shadow: 0 0 15px 5px rgba(128, 0, 255, 0.6);
+    }
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20px;
+      cursor: pointer;
+    }
+    .menu-icon span {
+      width: 25px;
+      height: 3px;
+      background-color: #000;
+      display: block;
+      border-radius: 2px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 1rem 2rem;
+    }
+    .product-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 0 2rem 2rem;
+      scroll-behavior: smooth;
+    }
+    .product-scroll::-webkit-scrollbar {
+      height: 10px;
+    }
+    .product-scroll::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+    }
+    .product-scroll::-webkit-scrollbar-track {
+      background: #eee;
+    }
+    .product {
+      flex: 0 0 auto;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    .product img {
       max-width: 100%;
-      height: auto;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+      font-size: 1rem;
+    }
+    .price {
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+    .price .original {
+      text-decoration: line-through;
+      color: #999;
+      margin-right: 5px;
+    }
+    .price .discount {
+      color: #e60000;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Logo Jotta Importz">
+  <header>
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="search-container">
+      <input type="text" placeholder="Buscar...">
+    </div>
+    <img class="logo" src="https://raw.githubusercontent.com/vzjottape/jottaimportz-site/refs/heads/main/retouch_2025042902042460.png" alt="Logo Jotta Importz">
+  </header>  <h2 class="section-title">Produtos Hots</h2>
+  <div class="product-scroll">
+    <div class="product">
+      <img src="https://via.placeholder.com/200x200.png?text=Produto+1" alt="Produto 1">
+      <h3>Tênis Nike Air</h3>
+      <div class="price">
+        <span class="original">R$ 599,90</span>
+        <span class="discount">R$ 499,90</span>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x200.png?text=Produto+2" alt="Produto 2">
+      <h3>Jordan 4 Retro</h3>
+      <div class="price">
+        <span class="original">R$ 999,90</span>
+        <span class="discount">R$ 799,90</span>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x200.png?text=Produto+3" alt="Produto 3">
+      <h3>Adidas Ozweego</h3>
+      <div class="price">
+        <span class="original">R$ 529,90</span>
+        <span class="discount">R$ 429,90</span>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x200.png?text=Produto+4" alt="Produto 4">
+      <h3>Air Max Plus Tn</h3>
+      <div class="price">
+        <span class="original">R$ 1099,90</span>
+        <span class="discount">R$ 899,90</span>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
